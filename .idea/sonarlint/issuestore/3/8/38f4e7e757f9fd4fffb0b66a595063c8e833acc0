@@ -1,0 +1,7 @@
+
+vsquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(éËŸôıÿÿÿÿ8Ğ“£‘-
+Vsquid:S1068"8Remove this unused "rpcSerializeProtocol" private field.(ìÂõİ8Ğ“£‘-
+ysquid:S00115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ìÒ¬½8Ğ“£‘-
+\squid:S21306"9Use "Integer.parseInt" for this string-to-int conversion.(¯şò©şÿÿÿÿ8Ğ“£‘-
+squid:S1450"cRemove the "rpcSerializeProtocol" field and declare it as a local variable in the relevant methods.(ìÂõİ8Ğ“£‘-
+^squid:S2274K";Remove this call to "await" or move it into a "while" loop.(€áıÄıÿÿÿÿ8Ğ“£‘-

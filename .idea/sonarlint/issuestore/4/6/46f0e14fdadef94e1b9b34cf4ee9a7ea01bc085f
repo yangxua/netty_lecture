@@ -1,0 +1,6 @@
+
+Ysquid:S2274";Remove this call to "await" or move it into a "while" loop.(†ã¤¢8Ñ‡Ô¤‘-
+Hsquid:S1068"+Remove this unused "request" private field.(ˆÈƒk8Ñ‡Ô¤‘-
+dsquid:S2184"FCast one of the operands of this multiplication operation to a "long".(†ã¤¢8Ñ‡Ô¤‘-
+W
+squid:S899":Do something with the "boolean" value returned by "await".(†ã¤¢8Ñ‡Ô¤‘-

@@ -1,0 +1,17 @@
+
+\squid:S2130K"9Use "Integer.parseInt" for this string-to-int conversion.(¯þò©þÿÿÿÿ8„Å™£‘-
+Hsquid:S3457P"%String contains no format specifiers.(âòÇ»ýÿÿÿÿ8„Å™£‘-
+V
+squid:S106S"9Replace this use of System.out or System.err by a logger.(¬²âƒ8†Äž¤‘-
+[
+squid:S106P"9Replace this use of System.out or System.err by a logger.(âòÇ»ýÿÿÿÿ8„Å™£‘-
+tsquid:S3457M"Q%n should be used in place of \n to produce the platform-specific line separator.(Þ²Øâüÿÿÿÿ8„Å™£‘-
+tsquid:S3457P"Q%n should be used in place of \n to produce the platform-specific line separator.(âòÇ»ýÿÿÿÿ8„Å™£‘-
+[
+squid:S106M"9Replace this use of System.out or System.err by a logger.(Þ²Øâüÿÿÿÿ8„Å™£‘-
+«%squid:RedundantThrowsDeclarationCheckZ"sRemove the declaration of thrown exception 'org.springframework.beans.BeansException' which is a runtime exception.(¯¶…œ8„Å™£‘-
+Wsquid:S21682"9Remove this dangerous instance of double-checked locking.(²ùÍ”8„Å™£‘-
+Fsquid:S1148f"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8„Å™£‘-
+Ksquid:S1481?"-Remove this unused "parallel" local variable.(®˜ÄÉ8„Å™£‘-
+Hsquid:S3457M"%String contains no format specifiers.(Þ²Øâüÿÿÿÿ8„Å™£‘-
+Psquid:S1481="2Remove this unused "threadFactory" local variable.(…«„µ8„Å™£‘-

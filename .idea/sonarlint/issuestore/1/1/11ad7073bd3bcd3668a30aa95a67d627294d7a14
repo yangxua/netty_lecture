@@ -1,0 +1,10 @@
+
+tsquid:S2095!"QUse try-with-resources or close this "ServerSocketChannel" in a "finally" clause.(ùç¸«ùÿÿÿÿ8°“ŞÙ-
+Lsquid:S1481d".Remove this unused "byteReads" local variable.(ªÜÙ´8èÓøÙ-
+isquid:S2095"FUse try-with-resources or close this "Selector" in a "finally" clause.(ŠŞö ùÿÿÿÿ8•Ğ¾Ù-
+V
+squid:S106)"9Replace this use of System.out or System.err by a logger.(•æ®Ş8°“ŞÙ-
+Ksquid:S1481W"(Remove this unused "num" local variable.(ª‘óıøÿÿÿÿ8±éåÙ-
+Esquid:S2189,""Add an end condition to this loop.(˜ïˆÿÿÿÿÿ8Ì¦ıØ-
+psquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(œû¿Ø8ï£úÙ-
+nsquid:CommentedOutCodeLine-"<This block of commented-out lines of code should be removed.(ğÚé’øÿÿÿÿ8°¹ãÙ-

@@ -1,0 +1,50 @@
+
+Wsquid:S1161¢":Add the "@Override" annotation above this method signature(Ã•Œƒüÿÿÿÿ
+Rsquid:S1161µ":Add the "@Override" annotation above this method signature(´çÍê
+Asquid:S1905²"*Remove this unnecessary cast to "Builder".(İ¤Â\
+nsquid:S00116ì"URename this field "bitField0_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ö»³Ä
+Gsquid:S1905¤"*Remove this unnecessary cast to "Builder".(Æ÷¾¢ûÿÿÿÿ
+/squid:S2176Ê"Rename this class.(ºœÓ­úÿÿÿÿ
+Bsquid:S1905 "*Remove this unnecessary cast to "Builder".(ê„£
+Rsquid:S1161é":Add the "@Override" annotation above this method signature(öË·š
+Dsquid:S1199u"-Extract this nested code block into a method.(İ…î½
+Rsquid:S1161¯":Add the "@Override" annotation above this method signature(¿¸Ú©
+Bsquid:S00108æ")Either remove or fill this block of code.(º„ç½
+gsquid:S00116Ä"NRename this field "id_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—‡Ñ÷
+squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ƒ°‡ıÿÿÿÿ
+Isquid:S1199o"-Extract this nested code block into a method.(ê×Êüÿÿÿÿ
+Osquid:S2589Ä"7Remove this expression which always evaluates to "true"(´Äºï
+vsquid:S1488Ä"_Immediately return this expression instead of assigning it to the temporary variable "builder".(«‰Ÿ~
+jsquid:S00117‡"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÆÓ¡€
+Wsquid:S1161":Add the "@Override" annotation above this method signature(ÑÍ“Ëûÿÿÿÿ
+Wsquid:S1161¦":Add the "@Override" annotation above this method signature(»¤Å“ûÿÿÿÿ
+Bsquid:S1905›"*Remove this unnecessary cast to "Builder".(¥ùšÏ
+Rsquid:S1161ª":Add the "@Override" annotation above this method signature(§ß—¡
+jsquid:S00116ê"QRename this field "email_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’ò¹Ø
+Isquid:S1199z"-Extract this nested code block into a method.(­ƒíéşÿÿÿÿ
+@squid:S1604ú"(Make this anonymous inner class a lambda(ş¦•Ã
+Gsquid:S1905­"*Remove this unnecessary cast to "Builder".(ˆÎ…•şÿÿÿÿ
+Wsquid:S1161–":Add the "@Override" annotation above this method signature(¹õˆÏùÿÿÿÿ
+nsquid:S00116˜"URename this field "bitField0_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ö»³Ä
+Isquid:S1199h"-Extract this nested code block into a method.(Î—­Šşÿÿÿÿ
+Nsquid:S1481]"7Remove this unused "mutable_bitField0_" local variable.(ß”â¢
+psquid:S2975š"SRemove this "clone" implementation; use a copy constructor or copy factory instead.(Îõ¾Òûÿÿÿÿ
+jsquid:S00116Û"QRename this field "email_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶å¶ä
+Wsquid:S1161š":Add the "@Override" annotation above this method signature(Îõ¾Òûÿÿÿÿ
+isquid:S00117]"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ß”â¢
+hsquid:S00116î"PRename this field "name_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñœã/
+Rsquid:S1161´":Add the "@Override" annotation above this method signature(”×Ñ¾
+^squid:S1126Õ"AReplace this if-then-else statement by a single return statement.(•®ŠËüÿÿÿÿ
+}squid:S1845×"eRename method "parser" to prevent any misunderstanding/clash with field "PARSER" defined on line 846.(Ÿ¯Ô
+?squid:S1948š"'Make "name_" transient or serializable.(áè±Í
+gsquid:S00116º"NRename this field "id_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—‡Ñ÷
+@squid:S1948Û"(Make "email_" transient or serializable.(¶å¶ä
+osquid:S00117ˆ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‹¤¢öøÿÿÿÿ
+€squid:S4144à"cUpdate this method so that its implementation is not identical to "getDefaultInstance" on line 841.(¤Ÿ·ôûÿÿÿÿ
+Ksquid:S1172	"/Remove this unused method parameter "registry".(•óÊõÿÿÿÿÿ
+isquid:S00116š"PRename this field "name_" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(áè±Í
+Rsquid:S1161¤":Add the "@Override" annotation above this method signature(œè“
+Rsquid:S1161º":Add the "@Override" annotation above this method signature(¥ªóÃ
+Gsquid:S4524h"+Move this default to the end of the switch.(Î—­Šşÿÿÿÿ
+Bsquid:S1905¨"*Remove this unnecessary cast to "Builder".(ƒ¦†
+Wsquid:S1161Û":Add the "@Override" annotation above this method signature(˜œö¾ûÿÿÿÿ

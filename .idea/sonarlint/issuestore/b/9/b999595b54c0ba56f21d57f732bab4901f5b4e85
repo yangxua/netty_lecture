@@ -1,0 +1,9 @@
+
+Hsquid:S11812"%Catch Exception instead of Throwable.(•”ø¾øÿÿÿÿ8†²˜£‘-
+V
+squid:S106;"9Replace this use of System.out or System.err by a logger.(Œ„±ÿ8†²˜£‘-
+Csquid:S34575"%String contains no format specifiers.(¶ªºô8†²˜£‘-
+V
+squid:S1065"9Replace this use of System.out or System.err by a logger.(¶ªºô8†²˜£‘-
+Fsquid:S11484"#Use a logger to log this exception.(¯Óí‘úÿÿÿÿ8†²˜£‘-
+osquid:S34575"Q%n should be used in place of \n to produce the platform-specific line separator.(¶ªºô8†²˜£‘-

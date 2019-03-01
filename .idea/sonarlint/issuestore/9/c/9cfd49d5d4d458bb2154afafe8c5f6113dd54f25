@@ -1,0 +1,6 @@
+
+Csquid:S2189""Add an end condition to this loop.(˜ïˆÿÿÿÿÿ8¤’ÁÛ-
+Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8†®ÈÛ-
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(Úî¡8Ó‹âÛ-
+rsquid:S2095"QUse try-with-resources or close this "ServerSocketChannel" in a "finally" clause.(ãöŒÎüÿÿÿÿ8¢â¹Û-

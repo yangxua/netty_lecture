@@ -1,0 +1,11 @@
+
+M
+squid:S106"9Replace this use of System.out or System.err by a logger.(Ü­¼Ğ
+²%squid:RedundantThrowsDeclarationCheck"‚Remove the declaration of thrown exception 'thrift.generated.DataException' which is a subclass of 'org.apache.thrift.TException'.(¾ßÙ™
+R
+squid:S106"9Replace this use of System.out or System.err by a logger.(»Éâ…ûÿÿÿÿ
+²%squid:RedundantThrowsDeclarationCheck"‚Remove the declaration of thrown exception 'thrift.generated.DataException' which is a subclass of 'org.apache.thrift.TException'.(©‚ôÏ
+M
+squid:S106"9Replace this use of System.out or System.err by a logger.(ã¾û
+R
+squid:S106"9Replace this use of System.out or System.err by a logger.(ãªõªúÿÿÿÿ

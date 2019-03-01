@@ -1,0 +1,14 @@
+
+[
+squid:S1060"9Replace this use of System.out or System.err by a logger.(äÌÆ×üÿÿÿÿ8ıæªšŠ-
+V
+squid:S106$"9Replace this use of System.out or System.err by a logger.(Åíá8°•ªšŠ-
+V
+squid:S106"9Replace this use of System.out or System.err by a logger.(ğÔ‘¬8Ûı•šŠ-
+isquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(’Üòé8ş½šŠ-
+[
+squid:S106%"9Replace this use of System.out or System.err by a logger.(îšÕîüÿÿÿÿ8°•ªšŠ-
+]squid:S1481"?Remove this unused "studentServiceBlockingStub" local variable.(¿À‰8ş½šŠ-
+nsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(àÁ¨§şÿÿÿÿ8îú¼šŠ-
+[
+squid:S106+"9Replace this use of System.out or System.err by a logger.(¡óíÚşÿÿÿÿ8°•ªšŠ-
