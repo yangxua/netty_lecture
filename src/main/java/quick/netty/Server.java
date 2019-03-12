@@ -18,18 +18,19 @@ public class Server {
 
 
     public static void main(String[] args) {
-        EventLoopGroup bossGroup = new NioEventLoopGroup(1);
+        EventLoopGroup bossGroup = new NioEventLoopGroup();
         EventLoopGroup workGroup = new NioEventLoopGroup();
 
         ServerBootstrap b = new ServerBootstrap();
+
         b.group(bossGroup, workGroup).channel(NioServerSocketChannel.class).childHandler(new ChannelInitializer<NioSocketChannel>() {
             @Override
             protected void initChannel(NioSocketChannel ch) throws Exception {
-
+                ch.pipeline().addLast(new FirstServerHandler());
             }
         });
 
-        bind(b, 1);
+        bind(b, 8888);
     }
 
     private static void bind(final ServerBootstrap b,final int i) {
