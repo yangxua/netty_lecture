@@ -1,4 +1,4 @@
-package quick.netty;
+package quick.netty.pkg;
 
 /**
  * @Auther: allanyang
@@ -6,6 +6,10 @@ package quick.netty;
  * @Description:
  */
 public interface Serializer {
+
+    byte JSON_SERIALIZER = 1;
+
+    Serializer DEFAULT = new JSONSerializer();
 
     /**
      * 序列化算法

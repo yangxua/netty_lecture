@@ -1,4 +1,4 @@
-package quick.netty;
+package quick.netty.pkg;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufAllocator;

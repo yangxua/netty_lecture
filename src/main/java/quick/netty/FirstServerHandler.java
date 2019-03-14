@@ -1,11 +1,12 @@
 package quick.netty;
 
 import io.netty.buffer.ByteBuf;
-import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
-
-import java.nio.charset.Charset;
+import quick.netty.pkg.LoginRequestPackage;
+import quick.netty.pkg.LoginResponsePackage;
+import quick.netty.pkg.Package;
+import quick.netty.pkg.PacketCodeC;
 
 /**
  * @Auther: allanyang
@@ -16,13 +17,34 @@ public class FirstServerHandler extends ChannelInboundHandlerAdapter {
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-        System.out.println(msg);
 
-        byte[] bytes = "hello,i am server!".getBytes(Charset.forName("utf-8"));
+        System.out.println("server read>>>>>>>");
 
-        ByteBuf buf = Unpooled.copiedBuffer(bytes);
+        Package requestPackage = PacketCodeC.getInstance().decode((ByteBuf) msg);
 
-        ctx.channel().writeAndFlush(buf);
+        if (requestPackage instanceof LoginRequestPackage) {
+            LoginRequestPackage loginRequestPackage= (LoginRequestPackage)requestPackage;
+
+            LoginResponsePackage responsePackage = new LoginResponsePackage();
+            responsePackage.setVersion(loginRequestPackage.getVersion());
+            if (valid(loginRequestPackage)) {
+                responsePackage.setFlag(true);
+                responsePackage.setReason("登陆成功");
+            } else {
+                responsePackage.setFlag(false);
+                responsePackage.setReason("登陆失败");
+            }
+
+            ByteBuf buf = PacketCodeC.getInstance().encode(ctx.alloc(), responsePackage);
+
+            ctx.channel().writeAndFlush(buf);
+        }
+
+
+    }
+
+    private boolean valid(LoginRequestPackage loginRequestPackage) {
+        return false;
     }
 
     @Override

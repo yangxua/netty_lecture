@@ -1,4 +1,6 @@
-package quick.netty;
+package quick.netty.pkg;
+
+import com.alibaba.fastjson.JSON;
 
 /**
  * @Auther: allanyang
@@ -19,6 +21,6 @@ public class JSONSerializer implements Serializer {
 
     @Override
     public <T> T deserialize(Class<T> clazz, byte[] bytes) {
-        return null;
+        return JSON.parseObject(bytes, clazz);
     }
 }

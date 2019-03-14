@@ -1,4 +1,4 @@
-package quick.netty;
+package quick.netty.pkg;
 
 /**
  * @Auther: allanyang
@@ -8,4 +8,6 @@ package quick.netty;
 public interface Command {
 
     Byte LOGIN_REQUEST = 1;
+
+    Byte LOGIN_RESPONSE = 2;
 }

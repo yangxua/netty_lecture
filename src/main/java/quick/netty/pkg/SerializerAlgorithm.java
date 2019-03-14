@@ -1,4 +1,4 @@
-package quick.netty;
+package quick.netty.pkg;
 
 /**
  * @Auther: allanyang

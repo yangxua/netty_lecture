@@ -1,19 +1,30 @@
-package quick.netty;
+package quick.netty.pkg;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 /**
  * @Auther: allanyang
  * @Date: 2019/3/12 20:26
  * @Description:
  */
-public class LoginRequestPackage  extends  Package{
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+public class LoginRequestPackage extends Package{
 
-    private Integer userId;
+    private String userId;
 
-    public Integer getUserId() {
+    private String username;
+
+    public String getUserId() {
         return userId;
     }
 
-    public void setUserId(Integer userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 
@@ -32,8 +43,6 @@ public class LoginRequestPackage  extends  Package{
     public void setPassword(String password) {
         this.password = password;
     }
-
-    private String username;
 
     private String password;
 
