@@ -29,6 +29,7 @@ public class Client {
             protected void initChannel(SocketChannel ch) throws Exception {
                 ch.pipeline().addLast(new FirstClientHandler());
             }
+
         });
 
         connect(b,"127.0.0.1",8888,MAX_RETRY);
