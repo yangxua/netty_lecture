@@ -3,10 +3,11 @@ package quick.netty;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
-import quick.netty.pkg.LoginRequestPackage;
-import quick.netty.pkg.LoginResponsePackage;
+import newland.rpc.model.MessageRequest;
+import quick.netty.pkg.*;
 import quick.netty.pkg.Package;
-import quick.netty.pkg.PacketCodeC;
+
+import java.util.Date;
 
 /**
  * @Auther: allanyang
@@ -38,13 +39,24 @@ public class FirstServerHandler extends ChannelInboundHandlerAdapter {
             ByteBuf buf = PacketCodeC.getInstance().encode(ctx.alloc(), responsePackage);
 
             ctx.channel().writeAndFlush(buf);
+        } else if (requestPackage instanceof MessageRequestPackage) {
+            MessageRequestPackage messageRequestPackage = (MessageRequestPackage)requestPackage;
+
+            System.out.println(new Date() + ": 收到客户端消息:" + messageRequestPackage.getMessage());
+
+            MessageResponsePackage responsePackage = new MessageResponsePackage();
+            responsePackage.setMessage("[回复客户端消息]：" + messageRequestPackage.getMessage() + "--server answer!");
+
+            ByteBuf buf = PacketCodeC.getInstance().encode(ctx.alloc(), responsePackage);
+
+            ctx.channel().writeAndFlush(buf);
         }
 
 
     }
 
     private boolean valid(LoginRequestPackage loginRequestPackage) {
-        return false;
+        return true;
     }
 
     @Override
