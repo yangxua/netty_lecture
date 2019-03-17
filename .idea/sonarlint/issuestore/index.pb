@@ -185,3 +185,9 @@ a
 1src/main/java/quick/netty/FirstClientHandler.java,a\d\ad68f73aa5977955b1b7da756cfc6685fb6f5f97
 ^
 .src/main/java/quick/netty/pkg/PacketCodeC.java,0\d\0de8c3bcd1ca087c7c39da602cf5fb6b06c3e6db
+g
+7src/main/java/quick/netty/pkg/LoginResponsePackage.java,a\1\a1fb81a73d5df4ff688d209ac8a4d2eed0b4cfbf
+a
+1src/main/java/quick/netty/FirstServerHandler.java,c\c\ccbd825c5a630ee03a0c5b2264794e2406c0a340
+U
+%src/main/java/quick/netty/Client.java,c\a\ca41c12f2892d91afa7157544c45adb20df018b9

@@ -28,6 +28,8 @@ public class PacketCodeC {
         packageTypeMap = new HashMap<>();
         packageTypeMap.put(Command.LOGIN_REQUEST, LoginRequestPackage.class);
         packageTypeMap.put(Command.LOGIN_RESPONSE, LoginResponsePackage.class);
+        packageTypeMap.put(Command.MESSAGE_REQUEST, MessageRequestPackage.class);
+        packageTypeMap.put(Command.MESSAGE_RESPONSE, MessageResponsePackage.class);
 
 
         serializerMap = new HashMap<>();
