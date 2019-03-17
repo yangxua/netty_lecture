@@ -1,7 +1,6 @@
 package quick.netty;
 
 import io.netty.bootstrap.Bootstrap;
-import io.netty.buffer.ByteBuf;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
@@ -11,10 +10,12 @@ import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.util.concurrent.Future;
 import io.netty.util.concurrent.GenericFutureListener;
-import newland.rpc.model.MessageRequest;
 import quick.netty.pkg.LoginUtils;
 import quick.netty.pkg.MessageRequestPackage;
-import quick.netty.pkg.PacketCodeC;
+import quick.netty.pkg.cli_handler.LoginResponseHandler;
+import quick.netty.pkg.cli_handler.MessageResponseHandler;
+import quick.netty.pkg.codec.PacketDecoder;
+import quick.netty.pkg.codec.PacketEncoder;
 
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
@@ -35,7 +36,10 @@ public class Client {
         b.group(workGroup).channel(NioSocketChannel.class).handler(new ChannelInitializer<SocketChannel>() {
             @Override
             protected void initChannel(SocketChannel ch) throws Exception {
-                ch.pipeline().addLast(new FirstClientHandler());
+                ch.pipeline().addLast(new PacketDecoder());
+                ch.pipeline().addLast(new LoginResponseHandler());
+                ch.pipeline().addLast(new MessageResponseHandler());
+                ch.pipeline().addLast(new PacketEncoder());
             }
 
         });
@@ -80,9 +84,8 @@ public class Client {
 
                     MessageRequestPackage request = new MessageRequestPackage();
                     request.setMessage(line);
-                    ByteBuf buf = PacketCodeC.getInstance().encode(channel.alloc(), request);
 
-                    channel.writeAndFlush(buf);
+                    channel.writeAndFlush(request);
                 }
             }
         }).start();

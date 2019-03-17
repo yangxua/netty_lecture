@@ -8,6 +8,10 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.util.concurrent.Future;
 import io.netty.util.concurrent.GenericFutureListener;
+import quick.netty.pkg.codec.PacketDecoder;
+import quick.netty.pkg.codec.PacketEncoder;
+import quick.netty.pkg.ser_handler.LoginRequestHandler;
+import quick.netty.pkg.ser_handler.MessageRequestHandler;
 
 /**
  * @Auther: allanyang
@@ -26,7 +30,10 @@ public class Server {
         b.group(bossGroup, workGroup).channel(NioServerSocketChannel.class).childHandler(new ChannelInitializer<NioSocketChannel>() {
             @Override
             protected void initChannel(NioSocketChannel ch) throws Exception {
-                ch.pipeline().addLast(new FirstServerHandler());
+                ch.pipeline().addLast(new PacketDecoder());
+                ch.pipeline().addLast(new LoginRequestHandler());
+                ch.pipeline().addLast(new MessageRequestHandler());
+                ch.pipeline().addLast(new PacketEncoder());
             }
         });
 

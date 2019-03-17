@@ -1,7 +1,6 @@
 package quick.netty.pkg;
 
 import io.netty.buffer.ByteBuf;
-import io.netty.buffer.ByteBufAllocator;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -37,9 +36,7 @@ public class PacketCodeC {
         serializerMap.put(serializer.getSerializerAlgorithm(), serializer);
     }
 
-    public ByteBuf encode(ByteBufAllocator bufAllocator, Package pkg) {
-        //创建buf
-        ByteBuf buf = bufAllocator.ioBuffer();
+    public ByteBuf encode(ByteBuf buf, Package pkg) {
 
         //序列化pkg
         byte[] serialize = Serializer.DEFAULT.serialize(pkg);
