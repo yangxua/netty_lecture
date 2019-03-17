@@ -1,3 +1,4 @@
+/*
 package quick.netty.pkg;
 
 import io.netty.channel.Channel;
@@ -15,3 +16,4 @@ public class LoginUtils {
         return attr.get() != null;
     }
 }
+*/

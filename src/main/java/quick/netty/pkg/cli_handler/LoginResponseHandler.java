@@ -4,7 +4,8 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import quick.netty.pkg.LoginRequestPackage;
 import quick.netty.pkg.LoginResponsePackage;
-import quick.netty.pkg.LoginUtils;
+import quick.netty.pkg.session.Session;
+import quick.netty.pkg.session.SessionUtils;
 
 import java.util.Date;
 
@@ -15,25 +16,22 @@ import java.util.Date;
  */
 public class LoginResponseHandler extends SimpleChannelInboundHandler<LoginResponsePackage> {
 
+
     @Override
-    public void channelActive(ChannelHandlerContext ctx) throws Exception {
-
-        System.out.println("client start >>>>>>>>");
-
-        LoginRequestPackage requestPackage = new LoginRequestPackage();
-        requestPackage.setUsername("allan");
-        requestPackage.setPassword("root");
-
-        ctx.channel().writeAndFlush(requestPackage);
+    public void channelInactive(ChannelHandlerContext ctx) throws Exception {
+        System.out.println("客户端连接被关闭");
     }
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, LoginResponsePackage msg) throws Exception {
+        String userId = msg.getUserId();
+        String userName = msg.getUserName();
+
         if (msg.isFlag()) {
-            System.out.println(new Date() + ": 客户端登录成功");
-            LoginUtils.makeAsLogin(ctx.channel());
+            System.out.println("[" + userName + "]登录成功，userId 为: " + userId);
+            SessionUtils.bindSession(new Session(userId,userName), ctx.channel());
         } else {
-            System.out.println(new Date() + ": 客户端登录失败，原因：" + msg.getReason());
+            System.out.println("[" + userName + "]登录失败，原因：" + msg.getReason());
         }
     }
 }

@@ -16,17 +16,9 @@ import lombok.ToString;
 @ToString
 public class LoginRequestPackage extends Package{
 
-    private String userId;
-
     private String username;
 
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
+    private String password;
 
     public String getUsername() {
         return username;
@@ -43,8 +35,6 @@ public class LoginRequestPackage extends Package{
     public void setPassword(String password) {
         this.password = password;
     }
-
-    private String password;
 
     @Override
     public Byte getCommand() {
