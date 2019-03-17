@@ -1,17 +1,14 @@
 package quick.netty;
 
 import io.netty.bootstrap.Bootstrap;
-import io.netty.channel.Channel;
-import io.netty.channel.ChannelFuture;
-import io.netty.channel.ChannelInitializer;
-import io.netty.channel.EventLoopGroup;
+import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.util.concurrent.Future;
 import io.netty.util.concurrent.GenericFutureListener;
-import quick.netty.pkg.LoginUtils;
 import quick.netty.pkg.MessageRequestPackage;
+import quick.netty.pkg.Spliter;
 import quick.netty.pkg.cli_handler.LoginResponseHandler;
 import quick.netty.pkg.cli_handler.MessageResponseHandler;
 import quick.netty.pkg.codec.PacketDecoder;
@@ -33,9 +30,14 @@ public class Client {
         EventLoopGroup workGroup = new NioEventLoopGroup();
 
         Bootstrap b = new Bootstrap();
-        b.group(workGroup).channel(NioSocketChannel.class).handler(new ChannelInitializer<SocketChannel>() {
+        b.group(workGroup).channel(NioSocketChannel.class)
+                .option(ChannelOption.CONNECT_TIMEOUT_MILLIS, 5000)
+                .option(ChannelOption.SO_KEEPALIVE, true)
+                .option(ChannelOption.TCP_NODELAY, true)
+                .handler(new ChannelInitializer<SocketChannel>() {
             @Override
             protected void initChannel(SocketChannel ch) throws Exception {
+                ch.pipeline().addLast(new Spliter());
                 ch.pipeline().addLast(new PacketDecoder());
                 ch.pipeline().addLast(new LoginResponseHandler());
                 ch.pipeline().addLast(new MessageResponseHandler());
@@ -77,7 +79,6 @@ public class Client {
     private static void asynConsoleProcessor(Channel channel) {
         new Thread(() -> {
             while (!Thread.interrupted()) {
-                if (LoginUtils.hasLogin(channel)) {
                     System.out.println("输入消息发送至服务端：");
                     Scanner scanner = new Scanner(System.in);
                     String line = scanner.next();
@@ -86,7 +87,6 @@ public class Client {
                     request.setMessage(line);
 
                     channel.writeAndFlush(request);
-                }
             }
         }).start();
     }

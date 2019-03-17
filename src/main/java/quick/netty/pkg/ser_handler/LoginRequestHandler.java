@@ -4,6 +4,7 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import quick.netty.pkg.LoginRequestPackage;
 import quick.netty.pkg.LoginResponsePackage;
+import quick.netty.pkg.LoginUtils;
 
 /**
  * @Auther: allanyang
@@ -21,6 +22,7 @@ public class LoginRequestHandler extends SimpleChannelInboundHandler<LoginReques
         if (valid(msg)) {
             responsePackage.setFlag(true);
             responsePackage.setReason("登陆成功");
+            LoginUtils.makeAsLogin(ctx.channel());
         } else {
             responsePackage.setFlag(false);
             responsePackage.setReason("登陆失败");

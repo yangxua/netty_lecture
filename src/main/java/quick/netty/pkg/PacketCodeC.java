@@ -12,7 +12,7 @@ import java.util.Map;
  */
 public class PacketCodeC {
 
-    private static final int MAGIC = 0x12345678;
+    public static final int MAGIC = 0x12345678;
     private static final PacketCodeC INSTANCE = new PacketCodeC();
     private PacketCodeC(){}
 
@@ -45,7 +45,7 @@ public class PacketCodeC {
         buf.writeByte(pkg.getVersion());
         buf.writeByte(Serializer.DEFAULT.getSerializerAlgorithm());
         buf.writeByte(pkg.getCommand());
-        buf.writeByte(serialize.length);
+        buf.writeInt(serialize.length);
         buf.writeBytes(serialize);
 
         return buf;
@@ -62,7 +62,7 @@ public class PacketCodeC {
 
         byte command = buf.readByte();
 
-        byte len = buf.readByte();
+        int len = buf.readInt();
 
         byte[] bytes = new byte[len];
         buf.readBytes(bytes);
