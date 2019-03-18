@@ -19,8 +19,6 @@ public class LoginRequestHandler extends SimpleChannelInboundHandler<LoginReques
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, LoginRequestPackage msg) throws Exception {
-        System.out.println("server read>>>>>>>");
-
         LoginResponsePackage responsePackage = new LoginResponsePackage();
         responsePackage.setUserName(msg.getUsername());
         responsePackage.setVersion(msg.getVersion());

@@ -29,6 +29,10 @@ public class PacketCodeC {
         packageTypeMap.put(Command.LOGIN_RESPONSE, LoginResponsePackage.class);
         packageTypeMap.put(Command.MESSAGE_REQUEST, MessageRequestPackage.class);
         packageTypeMap.put(Command.MESSAGE_RESPONSE, MessageResponsePackage.class);
+        packageTypeMap.put(Command.LOGOUT_REQUEST, LogoutRequestPackage.class);
+        packageTypeMap.put(Command.LOGOUT_RESPONSE, LogoutResponsePackage.class);
+        packageTypeMap.put(Command.CREATE_GROUP_REQUEST, CreateGroupRequestPackage.class);
+        packageTypeMap.put(Command.CREATE_GROUP_RESPONSE, CreateGroupResponsePackage.class);
 
 
         serializerMap = new HashMap<>();

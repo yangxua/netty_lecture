@@ -7,16 +7,16 @@ import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.util.concurrent.Future;
 import io.netty.util.concurrent.GenericFutureListener;
-import org.apache.http.io.SessionInputBuffer;
-import quick.netty.pkg.LoginRequestPackage;
-import quick.netty.pkg.MessageRequestPackage;
 import quick.netty.pkg.Spliter;
+import quick.netty.pkg.cli_handler.CreateGroupResponseHandler;
 import quick.netty.pkg.cli_handler.LoginResponseHandler;
 import quick.netty.pkg.cli_handler.MessageResponseHandler;
+import quick.netty.pkg.cli_handler.console.ConsoleCommandMgr;
+import quick.netty.pkg.cli_handler.console.LoginConsoleCommand;
+import quick.netty.pkg.cli_handler.LogoutResponseHandler;
 import quick.netty.pkg.codec.PacketDecoder;
 import quick.netty.pkg.codec.PacketEncoder;
 import quick.netty.pkg.session.SessionUtils;
-import sun.security.krb5.SCDynamicStoreConfig;
 
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
@@ -44,7 +44,9 @@ public class Client {
                 ch.pipeline().addLast(new Spliter());
                 ch.pipeline().addLast(new PacketDecoder());
                 ch.pipeline().addLast(new LoginResponseHandler());
+                ch.pipeline().addLast(new LogoutResponseHandler());
                 ch.pipeline().addLast(new MessageResponseHandler());
+                ch.pipeline().addLast(new CreateGroupResponseHandler());
                 ch.pipeline().addLast(new PacketEncoder());
             }
 
@@ -82,35 +84,17 @@ public class Client {
 
     private static void asynConsoleProcessor(Channel channel) {
         Scanner sc = new Scanner(System.in);
-        LoginRequestPackage request = new LoginRequestPackage();
+        LoginConsoleCommand loginConsoleCommand = new LoginConsoleCommand();
+        ConsoleCommandMgr consoleCommandMgr = new ConsoleCommandMgr();
 
         new Thread(() -> {
             while (!Thread.interrupted()) {
                 if (!SessionUtils.hasLogin(channel)) {
-
-                    System.out.println("请输入用户名登录：");
-                    String line = sc.nextLine();
-
-                    request.setUsername(line);
-                    request.setPassword("psd");
-
-                    channel.writeAndFlush(request);
-                    wiatForResponse();
+                    loginConsoleCommand.exec(sc, channel);
                 } else {
-                    String userId = sc.nextLine();
-                    String userName = sc.nextLine();
-                    channel.writeAndFlush(new MessageRequestPackage(userId, userName));
+                    consoleCommandMgr.exec(sc, channel);
                 }
             }
         }).start();
-    }
-
-    private static void wiatForResponse() {
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
     }
 }
