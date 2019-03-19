@@ -35,9 +35,12 @@ public class CreateGroupRequestHandler extends SimpleChannelInboundHandler<Creat
             }
         }
 
+        String groupId = IdUtils.random();
+        SessionUtils.bindChannelGroup(groupId, channelGroup);
+
         CreateGroupResponsePackage responsePackage = new CreateGroupResponsePackage();
         responsePackage.setSuccess(true);
-        responsePackage.setGroupId(IdUtils.random());
+        responsePackage.setGroupId(groupId);
         responsePackage.setUserNames(userNames);
 
         channelGroup.writeAndFlush(responsePackage);

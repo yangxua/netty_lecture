@@ -33,6 +33,12 @@ public class PacketCodeC {
         packageTypeMap.put(Command.LOGOUT_RESPONSE, LogoutResponsePackage.class);
         packageTypeMap.put(Command.CREATE_GROUP_REQUEST, CreateGroupRequestPackage.class);
         packageTypeMap.put(Command.CREATE_GROUP_RESPONSE, CreateGroupResponsePackage.class);
+        packageTypeMap.put(Command.JOIN_GROUP_REQUEST, JoinGroupRequestPackage.class);
+        packageTypeMap.put(Command.JOIN_GROUP_RESPONSE, JoinGroupResponsePackage.class);
+        packageTypeMap.put(Command.QUIT_GROUP_REQUEST, QuitGroupRequestPackage.class);
+        packageTypeMap.put(Command.QUIT_GROUP_RESPONSE, QuitGroupResponsePackage.class);
+        packageTypeMap.put(Command.LIST_GROUP_MEMBER_REQUSET, ListGroupMemberRequestPackage.class);
+        packageTypeMap.put(Command.LIST_GROUP_MEMBER_RESPONSE, ListGroupMemberResposnePackage.class);
 
 
         serializerMap = new HashMap<>();

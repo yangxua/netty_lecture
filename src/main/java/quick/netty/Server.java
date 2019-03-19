@@ -13,10 +13,7 @@ import quick.netty.pkg.AuthHandler;
 import quick.netty.pkg.Spliter;
 import quick.netty.pkg.codec.PacketDecoder;
 import quick.netty.pkg.codec.PacketEncoder;
-import quick.netty.pkg.ser_handler.CreateGroupRequestHandler;
-import quick.netty.pkg.ser_handler.LoginRequestHandler;
-import quick.netty.pkg.ser_handler.LogoutRequestHandler;
-import quick.netty.pkg.ser_handler.MessageRequestHandler;
+import quick.netty.pkg.ser_handler.*;
 
 /**
  * @Auther: allanyang
@@ -46,6 +43,9 @@ public class Server {
                 ch.pipeline().addLast(new MessageRequestHandler());
                 ch.pipeline().addLast(new CreateGroupRequestHandler());
                 ch.pipeline().addLast(new LogoutRequestHandler());
+                ch.pipeline().addLast(new JoinGroupRequestHandler());
+                ch.pipeline().addLast(new QuitGroupRequestHandler());
+                ch.pipeline().addLast(new ListGroupMemberRequestHandler());
                 ch.pipeline().addLast(new PacketEncoder());
             }
         });

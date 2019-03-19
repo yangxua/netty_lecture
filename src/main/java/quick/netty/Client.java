@@ -8,12 +8,9 @@ import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.util.concurrent.Future;
 import io.netty.util.concurrent.GenericFutureListener;
 import quick.netty.pkg.Spliter;
-import quick.netty.pkg.cli_handler.CreateGroupResponseHandler;
-import quick.netty.pkg.cli_handler.LoginResponseHandler;
-import quick.netty.pkg.cli_handler.MessageResponseHandler;
+import quick.netty.pkg.cli_handler.*;
 import quick.netty.pkg.cli_handler.console.ConsoleCommandMgr;
 import quick.netty.pkg.cli_handler.console.LoginConsoleCommand;
-import quick.netty.pkg.cli_handler.LogoutResponseHandler;
 import quick.netty.pkg.codec.PacketDecoder;
 import quick.netty.pkg.codec.PacketEncoder;
 import quick.netty.pkg.session.SessionUtils;
@@ -47,6 +44,9 @@ public class Client {
                 ch.pipeline().addLast(new LogoutResponseHandler());
                 ch.pipeline().addLast(new MessageResponseHandler());
                 ch.pipeline().addLast(new CreateGroupResponseHandler());
+                ch.pipeline().addLast(new JoinGroupResponseHandler());
+                ch.pipeline().addLast(new QuitGroupResponseHandler());
+                ch.pipeline().addLast(new ListGroupMemberResponseHandler());
                 ch.pipeline().addLast(new PacketEncoder());
             }
 
