@@ -11,8 +11,6 @@ import io.netty.util.concurrent.Future;
 import io.netty.util.concurrent.GenericFutureListener;
 import quick.netty.pkg.AuthHandler;
 import quick.netty.pkg.Spliter;
-import quick.netty.pkg.codec.PacketDecoder;
-import quick.netty.pkg.codec.PacketEncoder;
 import quick.netty.pkg.ser_handler.*;
 
 /**
@@ -36,17 +34,13 @@ public class Server {
                 .childHandler(new ChannelInitializer<NioSocketChannel>() {
             @Override
             protected void initChannel(NioSocketChannel ch) throws Exception {
+                ch.pipeline().addLast(new IMIdleStateHandler());
                 ch.pipeline().addLast(new Spliter());
-                ch.pipeline().addLast(new PacketDecoder());
-                ch.pipeline().addLast(new LoginRequestHandler());
-                ch.pipeline().addLast(new AuthHandler());
-                ch.pipeline().addLast(new MessageRequestHandler());
-                ch.pipeline().addLast(new CreateGroupRequestHandler());
-                ch.pipeline().addLast(new LogoutRequestHandler());
-                ch.pipeline().addLast(new JoinGroupRequestHandler());
-                ch.pipeline().addLast(new QuitGroupRequestHandler());
-                ch.pipeline().addLast(new ListGroupMemberRequestHandler());
-                ch.pipeline().addLast(new PacketEncoder());
+                ch.pipeline().addLast(PackageCodecHandler.INSTANCE);
+                ch.pipeline().addLast(LoginRequestHandler.INSTANCE);
+                ch.pipeline().addLast(HeartbeatRequestHandler.INSTANCE);
+                ch.pipeline().addLast(AuthHandler.INSTANCE);
+                ch.pipeline().addLast(IMHandler.INSTANCE);
             }
         });
 

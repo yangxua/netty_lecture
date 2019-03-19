@@ -13,6 +13,7 @@ import quick.netty.pkg.cli_handler.console.ConsoleCommandMgr;
 import quick.netty.pkg.cli_handler.console.LoginConsoleCommand;
 import quick.netty.pkg.codec.PacketDecoder;
 import quick.netty.pkg.codec.PacketEncoder;
+import quick.netty.pkg.ser_handler.IMIdleStateHandler;
 import quick.netty.pkg.session.SessionUtils;
 
 import java.util.Scanner;
@@ -38,6 +39,7 @@ public class Client {
                 .handler(new ChannelInitializer<SocketChannel>() {
             @Override
             protected void initChannel(SocketChannel ch) throws Exception {
+                ch.pipeline().addLast(new IMIdleStateHandler());
                 ch.pipeline().addLast(new Spliter());
                 ch.pipeline().addLast(new PacketDecoder());
                 ch.pipeline().addLast(new LoginResponseHandler());

@@ -1,6 +1,7 @@
 package quick.netty.pkg.ser_handler;
 
 import io.netty.channel.Channel;
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import quick.netty.pkg.MessageRequestPackage;
@@ -15,7 +16,11 @@ import java.util.Date;
  * @Date: 2019/3/17 11:02
  * @Description:
  */
+@ChannelHandler.Sharable
 public class MessageRequestHandler extends SimpleChannelInboundHandler<MessageRequestPackage>{
+
+    public static final MessageRequestHandler INSTANCE = new MessageRequestHandler();
+    private MessageRequestHandler() {}
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, MessageRequestPackage msg) throws Exception {

@@ -1,5 +1,6 @@
 package quick.netty.pkg.ser_handler;
 
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import quick.netty.pkg.LoginRequestPackage;
@@ -15,7 +16,11 @@ import java.util.UUID;
  * @Date: 2019/3/17 11:02
  * @Description:
  */
+@ChannelHandler.Sharable
 public class LoginRequestHandler extends SimpleChannelInboundHandler<LoginRequestPackage> {
+
+    public static final LoginRequestHandler INSTANCE = new LoginRequestHandler();
+    private LoginRequestHandler() {}
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, LoginRequestPackage msg) throws Exception {

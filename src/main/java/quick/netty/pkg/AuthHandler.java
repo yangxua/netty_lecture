@@ -1,8 +1,8 @@
 package quick.netty.pkg;
 
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
-import quick.netty.pkg.session.Session;
 import quick.netty.pkg.session.SessionUtils;
 
 /**
@@ -10,7 +10,11 @@ import quick.netty.pkg.session.SessionUtils;
  * @Date: 2019/3/17 13:43
  * @Description:
  */
+@ChannelHandler.Sharable
 public class AuthHandler extends ChannelInboundHandlerAdapter {
+
+    public static final AuthHandler INSTANCE = new AuthHandler();
+    private AuthHandler(){}
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
