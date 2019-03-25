@@ -3,6 +3,7 @@ package im.server.pipeline;
 import im.codec.PacketCodecHandler;
 import im.codec.Spliter;
 import im.server.handler.LoginRequestHandler;
+import im.server.handler.SendToUserRequestHandler;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.socket.nio.NioSocketChannel;
@@ -21,5 +22,6 @@ public class NettyServerPipeline extends ChannelInitializer<NioSocketChannel> {
         pipeline.addLast(new Spliter());
         pipeline.addLast(PacketCodecHandler.INSTANCE);
         pipeline.addLast(LoginRequestHandler.INSTANCE);
+        pipeline.addLast(SendToUserRequestHandler.INSTANCE);
     }
 }

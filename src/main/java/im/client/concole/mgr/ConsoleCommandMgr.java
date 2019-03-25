@@ -1,6 +1,7 @@
 package im.client.concole.mgr;
 
 import im.client.concole.ConsoleCommand;
+import im.client.concole.impl.SendToUserConsoleCommand;
 import im.util.SessionUtil;
 import io.netty.channel.Channel;
 
@@ -19,6 +20,7 @@ public class ConsoleCommandMgr implements ConsoleCommand {
 
     public ConsoleCommandMgr() {
         consoleCommandMap = new HashMap<>();
+        consoleCommandMap.put("sendToUser", new SendToUserConsoleCommand());
     }
 
     @Override
@@ -31,7 +33,7 @@ public class ConsoleCommandMgr implements ConsoleCommand {
 
         ConsoleCommand consoleCommand = consoleCommandMap.get(command);
 
-        if (command != null) {
+        if (consoleCommand != null) {
             consoleCommand.exec(scanner, channel);
         } else {
             System.err.println("无法识别[" + command + "]指令，请重新输入!");

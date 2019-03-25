@@ -2,7 +2,9 @@ package im.protocol;
 
 import im.protocol.command.Command;
 import im.protocol.request.LoginRequestPacket;
+import im.protocol.request.SendToUserRequestPacket;
 import im.protocol.response.LoginResponsePacket;
+import im.protocol.response.SendToUserResponsePakcet;
 import im.serializer.JSONSerializer;
 import im.serializer.Serializer;
 import im.serializer.SerializerAlgorithm;
@@ -28,6 +30,8 @@ public class PacketCodec {
         packetTypeMap = new HashMap<>();
         packetTypeMap.put(Command.LOGIN_REQUEST, LoginRequestPacket.class);
         packetTypeMap.put(Command.LOGIN_RESPONSE, LoginResponsePacket.class);
+        packetTypeMap.put(Command.SEND_TO_USER_REQUEST, SendToUserRequestPacket.class);
+        packetTypeMap.put(Command.SEND_TO_USER_RESPONSE, SendToUserResponsePakcet.class);
 
         serializeTypeMap = new HashMap<>();
         serializeTypeMap.put(SerializerAlgorithm.JSON, new JSONSerializer());
