@@ -38,6 +38,8 @@ public class PacketCodec {
         packetTypeMap.put(Command.QUIT_GROUP_RESPONSE, QuitGroupResponsePacket.class);
         packetTypeMap.put(Command.LIST_GROUP_MEMBERS_REQUEST, ListGroupMembersRequestPacket.class);
         packetTypeMap.put(Command.LIST_GROUP_MEMBERS_RESPONSE, ListGroupMembersResponsePacket.class);
+        packetTypeMap.put(Command.SEND_TO_GROUP_REQUEST, SendToGroupRequestPacket.class);
+        packetTypeMap.put(Command.SEND_TO_GROUP_RESPONSE, SendToGroupResponsePacket.class);
 
 
         serializeTypeMap = new HashMap<>();

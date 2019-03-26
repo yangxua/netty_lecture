@@ -27,6 +27,7 @@ public class NettyClientPipeline extends ChannelInitializer<NioSocketChannel> {
         pipeline.addLast(new JoinGroupResponseHandler());
         pipeline.addLast(new QuitGroupResponseHandler());
         pipeline.addLast(new ListGroupMembersResponseHandler());
+        pipeline.addLast(new SendToGroupResponseHandler());
         pipeline.addLast(new PacketEncoder());
     }
 }

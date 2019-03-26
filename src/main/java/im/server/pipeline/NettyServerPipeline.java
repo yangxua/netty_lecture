@@ -26,5 +26,6 @@ public class NettyServerPipeline extends ChannelInitializer<NioSocketChannel> {
         pipeline.addLast(JoinGroupRequestHandler.INSTANCE);
         pipeline.addLast(QuitGroupRequestHandler.INSTANCE);
         pipeline.addLast(ListGroupMembersRequestHandler.INSTANCE);
+        pipeline.addLast(SendToGroupRequestHandler.INSTANCE);
     }
 }

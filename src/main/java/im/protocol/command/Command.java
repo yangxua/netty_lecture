@@ -66,4 +66,14 @@ public interface Command {
      * 列出组成员响应指令
      */
     Byte LIST_GROUP_MEMBERS_RESPONSE = 12;
+
+    /**
+     * 发送到群请求指令
+     */
+    Byte SEND_TO_GROUP_REQUEST = 13;
+
+    /**
+     * 发送到群相应指令
+     */
+    Byte SEND_TO_GROUP_RESPONSE = 14;
 }
