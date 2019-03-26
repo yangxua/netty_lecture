@@ -1,7 +1,7 @@
 package im.client.concole.mgr;
 
 import im.client.concole.ConsoleCommand;
-import im.client.concole.impl.SendToUserConsoleCommand;
+import im.client.concole.impl.*;
 import im.util.SessionUtil;
 import io.netty.channel.Channel;
 
@@ -21,6 +21,10 @@ public class ConsoleCommandMgr implements ConsoleCommand {
     public ConsoleCommandMgr() {
         consoleCommandMap = new HashMap<>();
         consoleCommandMap.put("sendToUser", new SendToUserConsoleCommand());
+        consoleCommandMap.put("createGroup", new CreateGroupConsoleCommand());
+        consoleCommandMap.put("joinGroup", new JoinGroupConsoleCommand());
+        consoleCommandMap.put("quitGroup", new QuitGroupConsoleCommand());
+        consoleCommandMap.put("listGroupMembers", new ListGroupMembersConsoleCommand());
     }
 
     @Override

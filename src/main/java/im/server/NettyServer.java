@@ -28,7 +28,6 @@ public class NettyServer {
             ServerBootstrap b = new ServerBootstrap();
             b.group(bossGroup, workGroup).channel(NioServerSocketChannel.class).childHandler(new NettyServerPipeline());
 
-
             bind(b, PORT);
         } catch (Exception e) {
             bossGroup.shutdownGracefully();

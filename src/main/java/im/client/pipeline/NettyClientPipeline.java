@@ -1,7 +1,6 @@
 package im.client.pipeline;
 
-import im.client.handler.LoginResponseHandler;
-import im.client.handler.SendToUserResponseHandler;
+import im.client.handler.*;
 import im.codec.PacketDecoder;
 import im.codec.PacketEncoder;
 import im.codec.Spliter;
@@ -24,6 +23,10 @@ public class NettyClientPipeline extends ChannelInitializer<NioSocketChannel> {
         pipeline.addLast(new PacketDecoder());
         pipeline.addLast(new LoginResponseHandler());
         pipeline.addLast(new SendToUserResponseHandler());
+        pipeline.addLast(new CreateGroupResponseHandler());
+        pipeline.addLast(new JoinGroupResponseHandler());
+        pipeline.addLast(new QuitGroupResponseHandler());
+        pipeline.addLast(new ListGroupMembersResponseHandler());
         pipeline.addLast(new PacketEncoder());
     }
 }

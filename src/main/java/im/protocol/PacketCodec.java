@@ -1,10 +1,8 @@
 package im.protocol;
 
 import im.protocol.command.Command;
-import im.protocol.request.LoginRequestPacket;
-import im.protocol.request.SendToUserRequestPacket;
-import im.protocol.response.LoginResponsePacket;
-import im.protocol.response.SendToUserResponsePakcet;
+import im.protocol.request.*;
+import im.protocol.response.*;
 import im.serializer.JSONSerializer;
 import im.serializer.Serializer;
 import im.serializer.SerializerAlgorithm;
@@ -32,6 +30,15 @@ public class PacketCodec {
         packetTypeMap.put(Command.LOGIN_RESPONSE, LoginResponsePacket.class);
         packetTypeMap.put(Command.SEND_TO_USER_REQUEST, SendToUserRequestPacket.class);
         packetTypeMap.put(Command.SEND_TO_USER_RESPONSE, SendToUserResponsePakcet.class);
+        packetTypeMap.put(Command.CREATE_GROUP_REQUEST, CreateGroupRequestPacket.class);
+        packetTypeMap.put(Command.CREATE_GROUP_RESPONSE, CreateGroupResponsePacket.class);
+        packetTypeMap.put(Command.JOIN_GROUP_REQUEST, JoinGroupRequestPacket.class);
+        packetTypeMap.put(Command.JOIN_GROUP_RESPONSE, JoinGroupResponsePacket.class);
+        packetTypeMap.put(Command.QUIT_GROUP_REQUEST, QuitGroupRequestPacket.class);
+        packetTypeMap.put(Command.QUIT_GROUP_RESPONSE, QuitGroupResponsePacket.class);
+        packetTypeMap.put(Command.LIST_GROUP_MEMBERS_REQUEST, ListGroupMembersRequestPacket.class);
+        packetTypeMap.put(Command.LIST_GROUP_MEMBERS_RESPONSE, ListGroupMembersResponsePacket.class);
+
 
         serializeTypeMap = new HashMap<>();
         serializeTypeMap.put(SerializerAlgorithm.JSON, new JSONSerializer());
