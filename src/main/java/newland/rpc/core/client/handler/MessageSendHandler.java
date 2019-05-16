@@ -19,6 +19,7 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class MessageSendHandler extends SimpleChannelInboundHandler<MessageResponse> {
 
+    private static final int MAX_RETRY = 2;
     private ConcurrentHashMap<String, MessageCallBack> mapCallBack = new ConcurrentHashMap<String, MessageCallBack>();
 
     private Channel channel;

@@ -14,8 +14,19 @@ public class RpcThreadPool extends ThreadPoolExecutor {
     }
 
 
-    public static Executor getExecutor(int thread, int queues) {
-        String name = "RpcThreadPool";
+    public static Executor getExecutor(String name, int thread, int queues) {
         return new RpcThreadPool(thread, thread, 0, TimeUnit.MILLISECONDS, queues == 0 ? new SynchronousQueue<Runnable>() : (queues < 0 ? new LinkedBlockingQueue<Runnable>() : new LinkedBlockingQueue<Runnable>(queues)), new NameThreadFactory(name, true), new AbortPolicyWithReport(name));
+    }
+
+    public static Executor getExecutor(int thread, int queues) {
+        return getExecutor("MyThreadPool", thread, queues);
+    }
+
+    public static Executor getExecutor(int thread) {
+        return getExecutor(thread,-1);
+    }
+
+    public static Executor getExecutor() {
+        return getExecutor(Runtime.getRuntime().availableProcessors() * 2);
     }
 }
