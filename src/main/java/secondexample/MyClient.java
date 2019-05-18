@@ -20,7 +20,7 @@ public class MyClient {
             Bootstrap b = new Bootstrap();
             b.group(bossGroup).channel(NioSocketChannel.class).handler(new MyClientInitializer());
 
-            ChannelFuture f = b.connect("127.0.0.1", 8899).sync();
+            ChannelFuture f = b.connect("127.0.0.1", 8765).sync();
             f.channel().closeFuture().sync();
         } finally {
             bossGroup.shutdownGracefully();

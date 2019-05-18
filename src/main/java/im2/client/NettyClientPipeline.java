@@ -1,7 +1,8 @@
 package im2.client;
 
-import im2.client.handler.FirstClientHandler;
+import im2.client.handler.ClientHandler;
 import io.netty.channel.ChannelInitializer;
+import io.netty.channel.ChannelPipeline;
 import io.netty.channel.socket.nio.NioSocketChannel;
 
 /**
@@ -13,6 +14,7 @@ public class NettyClientPipeline extends ChannelInitializer<NioSocketChannel> {
 
     @Override
     protected void initChannel(NioSocketChannel ch) throws Exception {
-        ch.pipeline().addLast(new FirstClientHandler());
+        ChannelPipeline pipeline = ch.pipeline();
+        pipeline.addLast(new ClientHandler());
     }
 }

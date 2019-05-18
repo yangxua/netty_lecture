@@ -13,6 +13,8 @@ public class NettyServer {
 
     private static final int MAX_PORT = 65536;
     private static final int MIN_PORT = 0;
+    private static final int PORT = 8888;
+
 
     public static void main(String[] args) {
         NioEventLoopGroup boss = new NioEventLoopGroup(1);
@@ -23,7 +25,7 @@ public class NettyServer {
                 .channel(NioServerSocketChannel.class)
                 .childHandler(new NettyServerPipeline());
 
-        bind(bootstrap, 8888);
+        bind(bootstrap, PORT);
     }
 
     private static void bind(ServerBootstrap bootstrap, int port) {
@@ -35,8 +37,8 @@ public class NettyServer {
             if (future.isSuccess()) {
                 System.out.println("绑定端口" + port + "成功!");
             } else {
-                System.out.println("绑定端口" + port+ "失败!");
-                bind(bootstrap, port+1);
+                System.out.println("绑定端口" + port + "失败!");
+                bind(bootstrap, port + 1);
             }
         });
     }
