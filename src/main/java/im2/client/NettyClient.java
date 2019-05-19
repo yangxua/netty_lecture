@@ -1,11 +1,9 @@
 package im2.client;
 
-import im2.protocol.PacketCodec;
 import im2.protocol.request.MessageRequestPacket;
 import im2.thread.ApplicationThreadPoolExecutor;
 import im2.util.LoginUtil;
 import io.netty.bootstrap.Bootstrap;
-import io.netty.buffer.ByteBuf;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.nio.NioEventLoopGroup;
@@ -78,9 +76,7 @@ public class NettyClient {
                     MessageRequestPacket requestPacket = new MessageRequestPacket();
                     requestPacket.setMessage(line);
 
-                    ByteBuf buf = PacketCodec.INSTANCE.encode(channel.alloc(), requestPacket);
-
-                    channel.writeAndFlush(buf);
+                    channel.writeAndFlush(requestPacket);
                 }
             }
         };

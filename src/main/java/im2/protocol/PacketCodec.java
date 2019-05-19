@@ -10,7 +10,6 @@ import im2.serializer.SerializerAlgorithm;
 import im2.serializer.impl.JAVASerializer;
 import im2.serializer.impl.JSONSerializer;
 import io.netty.buffer.ByteBuf;
-import io.netty.buffer.ByteBufAllocator;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -44,12 +43,10 @@ public final class PacketCodec {
 
     private PacketCodec(){}
 
-    public ByteBuf encode(ByteBufAllocator bufAllocator, Packet packet) {
+    public ByteBuf encode(ByteBuf buf, Packet packet) {
         if (null == packet) {
             throw new IllegalArgumentException("packet can't be null");
         }
-
-        ByteBuf buf = bufAllocator.ioBuffer();
 
         byte[] bytes = getSerializer(packet.getSerializer()).serialize(packet);
 
