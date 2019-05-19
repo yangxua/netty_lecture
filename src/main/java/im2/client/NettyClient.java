@@ -2,7 +2,6 @@ package im2.client;
 
 import im2.protocol.request.MessageRequestPacket;
 import im2.thread.ApplicationThreadPoolExecutor;
-import im2.util.LoginUtil;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
@@ -68,16 +67,14 @@ public class NettyClient {
     private static void asyncConsoleThread(Channel channel) {
         Runnable r = () -> {
             while(!Thread.interrupted()) {
-                if (LoginUtil.isLogin(channel)) {
-                    System.out.println("输入消息发送至服务端: ");
-                    Scanner scanner = new Scanner(System.in);
-                    String line = scanner.nextLine();
+                System.out.println("输入消息发送至服务端: ");
+                Scanner scanner = new Scanner(System.in);
+                String line = scanner.nextLine();
 
-                    MessageRequestPacket requestPacket = new MessageRequestPacket();
-                    requestPacket.setMessage(line);
+                MessageRequestPacket requestPacket = new MessageRequestPacket();
+                requestPacket.setMessage(line);
 
-                    channel.writeAndFlush(requestPacket);
-                }
+                channel.writeAndFlush(requestPacket);
             }
         };
 

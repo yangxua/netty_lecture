@@ -21,7 +21,7 @@ import java.util.Map;
  */
 public final class PacketCodec {
 
-    private static final short MAGIC = (short) 0xbabe;
+    public static final short MAGIC = (short) 0xbabe;
 
     public final static PacketCodec INSTANCE = new PacketCodec();
 

@@ -2,6 +2,7 @@ package im2.server.handler;
 
 import im2.protocol.request.LoginRequestPacket;
 import im2.protocol.response.LoginResponsePacket;
+import im2.util.LoginUtil;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 
@@ -20,6 +21,7 @@ public class LoginRequestHandler extends SimpleChannelInboundHandler<LoginReques
         if (valid(packet)) {
             responsePacket.setSuccess(true);
             responsePacket.setMsg("登陆成功!");
+            LoginUtil.mark(ctx.channel());
         } else {
             responsePacket.setSuccess(false);
             responsePacket.setMsg("用户名或密码错误!");
