@@ -2,26 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="727f4fc9-82c4-451d-8bae-2971245ab82d" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/im2/client/handler/ClientHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/im2/protocol/Packet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/im2/protocol/PacketCodec.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/im2/protocol/command/Command.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/im2/protocol/request/LoginRequestPacket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/im2/protocol/response/LoginResponsePacket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/im2/serializer/Serializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/im2/serializer/SerializerAlgorithm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/im2/serializer/impl/JAVASerializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/im2/serializer/impl/JSONSerializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/im2/server/handler/ServerHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/im2/attributes/Attributes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/im2/protocol/request/MessageRequestPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/im2/protocol/response/MessageResponsePacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/im2/thread/AbortPolicyWithReport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/im2/thread/ApplicationThreadFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/im2/thread/ApplicationThreadPoolExecutor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/im2/util/LoginUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/newland/rpc/core/client/handler/MessageSendHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/newland/rpc/core/client/handler/MessageSendHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/secondexample/MyClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/secondexample/MyClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/im2/client/NettyClientPipeline.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/im2/client/NettyClientPipeline.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/im2/client/handler/FirstClientHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/im2/server/NettyServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/im2/server/NettyServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/im2/server/NettyServerPipeline.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/im2/server/NettyServerPipeline.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/im2/server/handler/FirstServerHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/secondexample/MyClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/secondexample/MyClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/im2/client/NettyClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/im2/client/NettyClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/im2/client/handler/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/im2/client/handler/ClientHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/im2/protocol/PacketCodec.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/im2/protocol/PacketCodec.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/im2/protocol/command/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/im2/protocol/command/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/im2/protocol/response/LoginResponsePacket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/im2/protocol/response/LoginResponsePacket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/im2/server/handler/ServerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/im2/server/handler/ServerHandler.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -85,11 +79,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="ClientHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/im2/client/handler/ClientHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="454">
+              <caret line="58" selection-start-line="58" selection-end-line="58" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="PacketCodec.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/im2/protocol/PacketCodec.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="40" column="19" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
+            <state relative-caret-position="343">
+              <caret line="36" column="74" selection-start-line="36" selection-start-column="74" selection-end-line="36" selection-end-column="74" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -100,7 +106,7 @@
       <file leaf-file-name="NettyServer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/im2/server/NettyServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
+            <state relative-caret-position="150">
               <caret line="30" column="24" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -109,56 +115,74 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NettyServerPipeline.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/im2/server/NettyServerPipeline.java">
+      <file leaf-file-name="ApplicationThreadFactory.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/thread/ApplicationThreadFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+            <state relative-caret-position="225">
+              <caret line="10" column="49" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ApplicationThreadFactory.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/im2/thread/ApplicationThreadFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="529">
+              <caret line="22" column="82" selection-start-line="22" selection-start-column="82" selection-end-line="22" selection-end-column="82" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#400#401#0" expanded="true" />
+                <element signature="e#431#432#0" expanded="true" />
+                <element signature="e#489#490#0" expanded="true" />
+                <element signature="e#541#542#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ClientHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/im2/client/handler/ClientHandler.java">
+      <file leaf-file-name="AbortPolicyWithReport.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/im2/thread/AbortPolicyWithReport.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
-              <caret line="53" selection-start-line="53" selection-end-line="53" />
+            <state relative-caret-position="475">
+              <caret line="26" column="44" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#314#315#0" expanded="true" />
+                <element signature="e#358#359#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NettyClientPipeline.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/im2/client/NettyClientPipeline.java">
+      <file leaf-file-name="ApplicationThreadPoolExecutor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/im2/thread/ApplicationThreadPoolExecutor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+            <state relative-caret-position="340">
+              <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#1121#1122#0" expanded="true" />
+                <element signature="e#1156#1157#0" expanded="true" />
+                <element signature="e#1215#1216#0" expanded="true" />
+                <element signature="e#1250#1251#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AbstractChannelHandlerContext.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-all/4.1.10.Final/d1bd84679a70217b52f86e7f9952dacf8f43de3f/netty-all-4.1.10.Final-sources.jar!/io/netty/channel/AbstractChannelHandlerContext.java">
+      <file leaf-file-name="Executor.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/util/concurrent/Executor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="368" selection-start-line="368" selection-end-line="368" />
+            <state relative-caret-position="379">
+              <caret line="139" column="9" selection-start-line="139" selection-start-column="9" selection-end-line="139" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NettyClient.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="NettyClient.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/im2/client/NettyClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="29" column="38" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
+            <state relative-caret-position="529">
+              <caret line="87" column="58" selection-start-line="87" selection-start-column="58" selection-end-line="87" selection-end-column="58" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -166,36 +190,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JSONSerializer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/im2/serializer/impl/JSONSerializer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#451#452#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ServerHandler.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ServerHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/im2/server/handler/ServerHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="11">
-              <caret line="27" column="21" lean-forward="true" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginResponsePacket.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/im2/protocol/response/LoginResponsePacket.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-17">
-              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+            <state relative-caret-position="268">
+              <caret line="25" column="48" lean-forward="true" selection-start-line="25" selection-start-column="48" selection-end-line="25" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -662,13 +661,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/im/client/concole/impl/JoinGroupConsoleCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/im/protocol/response/JoinGroupResponsePacket.java" />
-        <option value="$PROJECT_DIR$/src/main/java/im/protocol/request/QuitGroupRequestPacket.java" />
-        <option value="$PROJECT_DIR$/src/main/java/im/client/concole/impl/QuitGroupConsoleCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/im/protocol/response/QuitGroupResponsePacket.java" />
-        <option value="$PROJECT_DIR$/src/main/java/im/server/handler/QuitGroupRequestHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/im/server/NettyServer.java" />
         <option value="$PROJECT_DIR$/src/main/java/im/client/concole/impl/ListGroupMembersConsoleCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/im/protocol/request/ListGroupMembersRequestPacket.java" />
         <option value="$PROJECT_DIR$/src/main/java/im/protocol/response/ListGroupMembersResponsePacket.java" />
@@ -694,7 +686,6 @@
         <option value="$PROJECT_DIR$/src/main/java/im/serializer/Serializer.java" />
         <option value="$PROJECT_DIR$/src/main/java/im/client/concole/impl/LoginConsoleCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/im2/av.java" />
-        <option value="$PROJECT_DIR$/src/main/java/im2/client/NettyClient.java" />
         <option value="$PROJECT_DIR$/src/main/java/newland/rpc/core/client/handler/MessageSendHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/im2/server/NettyServer.java" />
         <option value="$PROJECT_DIR$/src/main/java/secondexample/MyClient.java" />
@@ -708,11 +699,19 @@
         <option value="$PROJECT_DIR$/src/main/java/im2/client/NettyClientPipeline.java" />
         <option value="$PROJECT_DIR$/src/main/java/im2/protocol/request/LoginRequestPacket.java" />
         <option value="$PROJECT_DIR$/src/main/java/im2/server/NettyServerPipeline.java" />
-        <option value="$PROJECT_DIR$/src/main/java/im2/protocol/command/Command.java" />
+        <option value="$PROJECT_DIR$/src/main/java/im2/protocol/request/MessageRequestPacket.java" />
+        <option value="$PROJECT_DIR$/src/main/java/im2/protocol/response/MessageResponse.java" />
+        <option value="$PROJECT_DIR$/src/main/java/im2/attributes/Attributes.java" />
+        <option value="$PROJECT_DIR$/src/main/java/im2/util/LoginUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/im2/server/handler/ServerHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/im2/protocol/response/LoginResponsePacket.java" />
+        <option value="$PROJECT_DIR$/src/main/java/im2/protocol/command/Command.java" />
         <option value="$PROJECT_DIR$/src/main/java/im2/client/handler/ClientHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/im2/protocol/PacketCodec.java" />
-        <option value="$PROJECT_DIR$/src/main/java/im2/server/handler/ServerHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/im2/thread/ApplicationThreadFactory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/im2/thread/AbortPolicyWithReport.java" />
+        <option value="$PROJECT_DIR$/src/main/java/im2/thread/ApplicationThreadPoolExecutor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/im2/client/NettyClient.java" />
       </list>
     </option>
   </component>
@@ -776,61 +775,6 @@
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="netty_lecture" type="b2602c69:ProjectViewProjectNode" />
-              <item name="netty_lecture" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="im2" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="netty_lecture" type="b2602c69:ProjectViewProjectNode" />
-              <item name="netty_lecture" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="im2" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="netty_lecture" type="b2602c69:ProjectViewProjectNode" />
-              <item name="netty_lecture" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="im2" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="handler" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="netty_lecture" type="b2602c69:ProjectViewProjectNode" />
-              <item name="netty_lecture" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="im2" type="462c0819:PsiDirectoryNode" />
-              <item name="protocol" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="netty_lecture" type="b2602c69:ProjectViewProjectNode" />
-              <item name="netty_lecture" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="im2" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="netty_lecture" type="b2602c69:ProjectViewProjectNode" />
-              <item name="netty_lecture" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="im2" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="handler" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -847,7 +791,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../flash-netty" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../work-multi-threads-server" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -1043,7 +987,7 @@
       <workItem from="1554726273227" duration="1913000" />
       <workItem from="1554812894560" duration="2433000" />
       <workItem from="1557912122545" duration="15114000" />
-      <workItem from="1558146330176" duration="7981000" />
+      <workItem from="1558146330176" duration="14756000" />
     </task>
     <task id="LOCAL-00001" summary="server">
       <created>1551876248319</created>
@@ -1150,11 +1094,18 @@
       <option name="project" value="LOCAL" />
       <updated>1558015271962</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="登陆成功">
+      <created>1558156405958</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1558156405958</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="276418000" />
+    <option name="totallyTimeSpent" value="283193000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1178,13 +1129,13 @@
       <window_info id="Structure" order="1" sideWeight="0.50078493" side_tool="true" weight="0.21565495" />
       <window_info anchor="right" id="Ant Build" order="1" sideWeight="0.49891305" weight="0.24973376" />
       <window_info id="UI Designer" order="2" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49893504" visible="true" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49893504" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32934782" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.32934782" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4946752" weight="0.29565218" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4946752" visible="true" weight="0.29565218" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32934782" />
       <window_info anchor="bottom" id="Spring" order="8" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49733758" weight="0.32934782" />
@@ -1251,7 +1202,8 @@
     <MESSAGE value="加 退出 列出群成员 自测通过" />
     <MESSAGE value="群发送消息 自测通过" />
     <MESSAGE value="tijiao" />
-    <option name="LAST_COMMIT_MESSAGE" value="tijiao" />
+    <MESSAGE value="登陆成功" />
+    <option name="LAST_COMMIT_MESSAGE" value="登陆成功" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1312,27 +1264,21 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/im2/protocol/PacketCodec.java</url>
-          <line>77</line>
+          <line>83</line>
           <properties />
           <option name="timeStamp" value="44" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/im2/server/handler/ServerHandler.java</url>
-          <line>27</line>
+          <url>file://$PROJECT_DIR$/src/main/java/im2/protocol/PacketCodec.java</url>
+          <line>51</line>
           <properties />
-          <option name="timeStamp" value="47" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/im2/server/handler/ServerHandler.java</url>
-          <line>21</line>
-          <properties />
-          <option name="timeStamp" value="48" />
+          <option name="timeStamp" value="50" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="49" />
+      <option name="time" value="52" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -1340,69 +1286,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/newland/rpc/core/client/handler/MessageSendHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="72" selection-start-line="72" selection-end-line="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-all/4.1.10.Final/d1bd84679a70217b52f86e7f9952dacf8f43de3f/netty-all-4.1.10.Final-sources.jar!/io/netty/util/concurrent/EventExecutorGroup.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="98" column="23" selection-start-line="98" selection-start-column="23" selection-end-line="98" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/im/client/handler/SendToUserResponseHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="13" column="99" selection-start-line="13" selection-start-column="99" selection-end-line="13" selection-end-column="99" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/firstexample/TestHttpServerHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/firstexample/TestServerInitializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/firstexample/TestServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-all/4.1.10.Final/d1bd84679a70217b52f86e7f9952dacf8f43de3f/netty-all-4.1.10.Final-sources.jar!/io/netty/channel/ChannelOutboundInvoker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="229" column="18" selection-start-line="229" selection-start-column="18" selection-end-line="229" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/im/client/pipeline/NettyClientPipeline.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="67" selection-start-line="15" selection-start-column="67" selection-end-line="15" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/im/server/pipeline/NettyServerPipeline.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="14" column="50" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/im/server/handler/CreateGroupRequestHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-121">
@@ -1428,13 +1311,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="42" column="13" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/thread/ApplicationThreadFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="10" column="49" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
         </state>
       </provider>
     </entry>
@@ -1555,13 +1431,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/im2/protocol/command/Command.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/im2/protocol/Packet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
@@ -1605,27 +1474,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-all/4.1.10.Final/d1bd84679a70217b52f86e7f9952dacf8f43de3f/netty-all-4.1.10.Final-sources.jar!/io/netty/channel/ChannelHandlerContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="196" column="21" selection-start-line="196" selection-start-column="21" selection-end-line="196" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/im2/server/NettyServerPipeline.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/im2/client/NettyClientPipeline.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1643,26 +1495,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/im2/client/NettyClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="29" column="38" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/im2/server/NettyServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="30" column="24" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-all/4.1.10.Final/d1bd84679a70217b52f86e7f9952dacf8f43de3f/netty-all-4.1.10.Final-sources.jar!/io/netty/channel/AbstractChannelHandlerContext.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -1670,30 +1502,101 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/im2/client/handler/ClientHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/im2/client/NettyClientPipeline.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="53" selection-start-line="53" selection-end-line="53" />
+        <state relative-caret-position="425">
+          <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/im2/protocol/PacketCodec.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/im2/protocol/request/MessageRequestPacket.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="40" column="19" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
+        <state>
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#231#232#0" expanded="true" />
+            <element signature="e#255#256#0" expanded="true" />
+            <element signature="e#307#308#0" expanded="true" />
+            <element signature="e#331#332#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-all/4.1.10.Final/d1bd84679a70217b52f86e7f9952dacf8f43de3f/netty-all-4.1.10.Final-sources.jar!/io/netty/util/Attribute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="37" column="9" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/im2/util/LoginUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="17" column="59" selection-start-line="17" selection-start-column="59" selection-end-line="17" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#267#268#0" expanded="true" />
+            <element signature="e#321#322#0" expanded="true" />
+            <element signature="e#345#346#0" expanded="true" />
+            <element signature="e#408#409#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-all/4.1.10.Final/d1bd84679a70217b52f86e7f9952dacf8f43de3f/netty-all-4.1.10.Final-sources.jar!/io/netty/channel/ChannelHandlerContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="196" column="21" selection-start-line="196" selection-start-column="21" selection-end-line="196" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/im2/protocol/command/Command.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="27" column="30" lean-forward="true" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/im2/protocol/response/MessageResponsePacket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#253#254#0" expanded="true" />
+            <element signature="e#277#278#0" expanded="true" />
+            <element signature="e#422#423#0" expanded="true" />
+            <element signature="e#450#451#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/im2/protocol/response/LoginResponsePacket.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-17">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        <state relative-caret-position="326">
+          <caret line="27" column="25" lean-forward="true" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#450#451#0" expanded="true" />
+            <element signature="e#495#496#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/im2/attributes/Attributes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="11" column="68" selection-start-line="11" selection-start-column="68" selection-end-line="11" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/im2/client/handler/ClientHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="454">
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1702,8 +1605,91 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/im2/server/handler/ServerHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11">
-          <caret line="27" column="21" lean-forward="true" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
+        <state relative-caret-position="268">
+          <caret line="25" column="48" lean-forward="true" selection-start-line="25" selection-start-column="48" selection-end-line="25" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/im2/protocol/PacketCodec.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="36" column="74" selection-start-line="36" selection-start-column="74" selection-end-line="36" selection-end-column="74" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/im2/server/NettyServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="30" column="24" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/thread/ApplicationThreadFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="10" column="49" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/im2/thread/AbortPolicyWithReport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="26" column="44" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#314#315#0" expanded="true" />
+            <element signature="e#358#359#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/im2/thread/ApplicationThreadFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="22" column="82" selection-start-line="22" selection-start-column="82" selection-end-line="22" selection-end-column="82" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#400#401#0" expanded="true" />
+            <element signature="e#431#432#0" expanded="true" />
+            <element signature="e#489#490#0" expanded="true" />
+            <element signature="e#541#542#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/im2/thread/ApplicationThreadPoolExecutor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+          <folding>
+            <element signature="e#1121#1122#0" expanded="true" />
+            <element signature="e#1156#1157#0" expanded="true" />
+            <element signature="e#1215#1216#0" expanded="true" />
+            <element signature="e#1250#1251#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/util/concurrent/Executor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="139" column="9" selection-start-line="139" selection-start-column="9" selection-end-line="139" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/im2/client/NettyClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="87" column="58" selection-start-line="87" selection-start-column="58" selection-end-line="87" selection-end-column="58" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

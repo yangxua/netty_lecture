@@ -7,25 +7,17 @@ import lombok.Data;
 
 /**
  * @Auther: allanyang
- * @Date: 2019/5/18 12:31
+ * @Date: 2019/5/19 10:28
  * @Description:
  */
 @Data
-public class LoginResponsePacket extends Packet {
+public class MessageResponsePacket extends Packet {
 
-    /**
-     * 是否成功
-     */
-    private boolean isSuccess;
-
-    /**
-     * 返回消息
-     */
-    private String msg;
+    private String message;
 
     @Override
     protected byte getCommand() {
-        return Command.LOGIN_RESPONSE;
+        return Command.MESSAGE_RESPONSE;
     }
 
     @Override

@@ -1,11 +1,19 @@
 package im2.client;
 
+import im2.protocol.PacketCodec;
+import im2.protocol.request.MessageRequestPacket;
+import im2.thread.ApplicationThreadPoolExecutor;
+import im2.util.LoginUtil;
 import io.netty.bootstrap.Bootstrap;
+import io.netty.buffer.ByteBuf;
+import io.netty.channel.Channel;
+import io.netty.channel.ChannelFuture;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.Date;
+import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -40,6 +48,9 @@ public class NettyClient {
         bootstrap.connect(ip, port).addListener(future -> {
            if (future.isSuccess()) {
                System.out.println("连接客户端成功!");
+
+               Channel channel = ((ChannelFuture) future).channel();
+               asyncConsoleThread(channel);
            } else if (retry == 0){
                System.out.println("连接次数已用尽!");
            } else {
@@ -54,5 +65,26 @@ public class NettyClient {
                );
            }
         });
+    }
+
+    private static void asyncConsoleThread(Channel channel) {
+        Runnable r = () -> {
+            while(!Thread.interrupted()) {
+                if (LoginUtil.isLogin(channel)) {
+                    System.out.println("输入消息发送至服务端: ");
+                    Scanner scanner = new Scanner(System.in);
+                    String line = scanner.nextLine();
+
+                    MessageRequestPacket requestPacket = new MessageRequestPacket();
+                    requestPacket.setMessage(line);
+
+                    ByteBuf buf = PacketCodec.INSTANCE.encode(channel.alloc(), requestPacket);
+
+                    channel.writeAndFlush(buf);
+                }
+            }
+        };
+
+        ApplicationThreadPoolExecutor.getExecutor().execute(r);
     }
 }

@@ -1,4 +1,4 @@
-package im2.protocol.response;
+package im2.protocol.request;
 
 import im2.protocol.Packet;
 import im2.protocol.command.Command;
@@ -7,25 +7,17 @@ import lombok.Data;
 
 /**
  * @Auther: allanyang
- * @Date: 2019/5/18 12:31
+ * @Date: 2019/5/19 10:27
  * @Description:
  */
 @Data
-public class LoginResponsePacket extends Packet {
+public class MessageRequestPacket extends Packet {
 
-    /**
-     * 是否成功
-     */
-    private boolean isSuccess;
-
-    /**
-     * 返回消息
-     */
-    private String msg;
+    private String message;
 
     @Override
     protected byte getCommand() {
-        return Command.LOGIN_RESPONSE;
+        return Command.MESSAGE_REQUEST;
     }
 
     @Override

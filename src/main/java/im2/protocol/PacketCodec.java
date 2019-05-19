@@ -2,7 +2,9 @@ package im2.protocol;
 
 import im2.protocol.command.Command;
 import im2.protocol.request.LoginRequestPacket;
+import im2.protocol.request.MessageRequestPacket;
 import im2.protocol.response.LoginResponsePacket;
+import im2.protocol.response.MessageResponsePacket;
 import im2.serializer.Serializer;
 import im2.serializer.SerializerAlgorithm;
 import im2.serializer.impl.JAVASerializer;
@@ -30,7 +32,9 @@ public final class PacketCodec {
     static {
         command2Packet = new HashMap<>();
         command2Packet.put(Command.LOGIN_REQUEST, LoginRequestPacket.class);
-        command2Packet.put(Command.LOGIN_RESPINSE, LoginResponsePacket.class);
+        command2Packet.put(Command.LOGIN_RESPONSE, LoginResponsePacket.class);
+        command2Packet.put(Command.MESSAGE_REQUEST, MessageRequestPacket.class);
+        command2Packet.put(Command.MESSAGE_RESPONSE, MessageResponsePacket.class);
 
 
         serializeAlgorithm2Serialize = new HashMap();
