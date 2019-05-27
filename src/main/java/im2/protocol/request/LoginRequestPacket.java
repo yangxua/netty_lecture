@@ -21,10 +21,6 @@ public class LoginRequestPacket extends Packet {
      * 密码
      */
     private String password;
-    /**
-     * 用户id
-     */
-    private String userId;
 
     @Override
     protected byte getCommand() {

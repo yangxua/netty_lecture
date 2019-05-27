@@ -2,7 +2,9 @@ package im2.server.handler;
 
 import im2.protocol.request.LoginRequestPacket;
 import im2.protocol.response.LoginResponsePacket;
-import im2.util.LoginUtil;
+import im2.session.Session;
+import im2.util.RandomUtil;
+import im2.util.SessionUtil;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 
@@ -21,7 +23,11 @@ public class LoginRequestHandler extends SimpleChannelInboundHandler<LoginReques
         if (valid(packet)) {
             responsePacket.setSuccess(true);
             responsePacket.setMsg("登陆成功!");
-            LoginUtil.mark(ctx.channel());
+            String userId = RandomUtil.random();
+            responsePacket.setUserId(userId);
+            responsePacket.setUserName(packet.getUserName());
+            SessionUtil.bindSession(new Session(userId, packet.getUserName()), ctx.channel());
+            System.out.println("[" + packet.getUserName() + "]登录成功");
         } else {
             responsePacket.setSuccess(false);
             responsePacket.setMsg("用户名或密码错误!");
@@ -34,6 +40,12 @@ public class LoginRequestHandler extends SimpleChannelInboundHandler<LoginReques
         if (null == loginRequestPacket) {
             return false;
         }
-        return "allan".equalsIgnoreCase(loginRequestPacket.getUserName()) && "pwd".equalsIgnoreCase(loginRequestPacket.getPassword());
+        return "pwd".equalsIgnoreCase(loginRequestPacket.getPassword());
     }
+
+    @Override
+    public void channelUnregistered(ChannelHandlerContext ctx) throws Exception {
+        SessionUtil.unBindSession(ctx.channel());
+    }
+
 }

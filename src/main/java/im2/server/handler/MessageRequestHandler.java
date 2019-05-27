@@ -2,10 +2,11 @@ package im2.server.handler;
 
 import im2.protocol.request.MessageRequestPacket;
 import im2.protocol.response.MessageResponsePacket;
+import im2.session.Session;
+import im2.util.SessionUtil;
+import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
-
-import java.util.Date;
 
 /**
  * @Auther: allanyang
@@ -16,11 +17,23 @@ public class MessageRequestHandler extends SimpleChannelInboundHandler<MessageRe
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, MessageRequestPacket packet) throws Exception {
-        System.out.println(new Date() + ": 收到客户端消息: " + packet.getMessage());
 
-        MessageResponsePacket messageResponsePacket = new MessageResponsePacket();
-        messageResponsePacket.setMessage("服务端回复【" + packet.getMessage() + "】");
+        //拿到消息发送方的session
+        Session session = SessionUtil.getSession(ctx.channel());
 
-        ctx.channel().writeAndFlush(messageResponsePacket);
+        //包装消息
+        MessageResponsePacket responsePacket = new MessageResponsePacket();
+        responsePacket.setFromUserId(session.getUserId());
+        responsePacket.setFromUserName(session.getUserName());
+        responsePacket.setMessage(packet.getMessage());
+
+        //接收方channel
+        Channel channel = SessionUtil.getChannel(packet.getUserId());
+
+        if (channel != null && SessionUtil.hasLogin(channel)) {
+            channel.writeAndFlush(responsePacket);
+        } else {
+
+        }
     }
 }

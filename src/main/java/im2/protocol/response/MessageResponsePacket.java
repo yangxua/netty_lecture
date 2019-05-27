@@ -13,6 +13,19 @@ import lombok.Data;
 @Data
 public class MessageResponsePacket extends Packet {
 
+    /**
+     * 用户id
+     */
+    private String fromUserId;
+
+    /**
+     * 用户名
+     */
+    private String fromUserName;
+
+    /**
+     * 消息内容
+     */
     private String message;
 
     @Override

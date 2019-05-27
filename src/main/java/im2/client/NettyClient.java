@@ -1,7 +1,9 @@
 package im2.client;
 
+import im2.protocol.request.LoginRequestPacket;
 import im2.protocol.request.MessageRequestPacket;
 import im2.thread.ApplicationThreadPoolExecutor;
+import im2.util.SessionUtil;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
@@ -65,19 +67,42 @@ public class NettyClient {
     }
 
     private static void asyncConsoleThread(Channel channel) {
+        Scanner scanner = new Scanner(System.in);
+
         Runnable r = () -> {
             while(!Thread.interrupted()) {
-                System.out.println("输入消息发送至服务端: ");
-                Scanner scanner = new Scanner(System.in);
-                String line = scanner.nextLine();
+                if (!SessionUtil.hasLogin(channel)) {
+                    System.out.println("请输入用户名: ");
 
-                MessageRequestPacket requestPacket = new MessageRequestPacket();
-                requestPacket.setMessage(line);
+                    String userName = scanner.nextLine();
 
-                channel.writeAndFlush(requestPacket);
+                    LoginRequestPacket requestPacket = new LoginRequestPacket();
+                    requestPacket.setUserName(userName);
+                    requestPacket.setPassword("pwd");
+
+                    channel.writeAndFlush(requestPacket);
+                    sleep();
+                } else {
+                    String toUserId = scanner.next();
+                    String content = scanner.next();
+
+                    MessageRequestPacket requestPacket = new MessageRequestPacket();
+                    requestPacket.setUserId(toUserId);
+                    requestPacket.setMessage(content);
+
+                    channel.writeAndFlush(requestPacket);
+                }
             }
         };
 
         ApplicationThreadPoolExecutor.getExecutor().execute(r);
+    }
+
+    private static void sleep() {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }

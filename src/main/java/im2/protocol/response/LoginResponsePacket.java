@@ -23,6 +23,16 @@ public class LoginResponsePacket extends Packet {
      */
     private String msg;
 
+    /**
+     * 用户id
+     */
+    private String userId;
+
+    /**
+     * 用户名
+     */
+    private String userName;
+
     @Override
     protected byte getCommand() {
         return Command.LOGIN_RESPONSE;

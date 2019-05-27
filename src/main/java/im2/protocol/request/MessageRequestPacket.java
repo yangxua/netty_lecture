@@ -13,6 +13,14 @@ import lombok.Data;
 @Data
 public class MessageRequestPacket extends Packet {
 
+    /**
+     * 用户id
+     */
+    private String userId;
+
+    /**
+     * 消息内容
+     */
     private String message;
 
     @Override
