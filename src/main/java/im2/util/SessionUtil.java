@@ -3,6 +3,7 @@ package im2.util;
 import im2.attributes.Attributes;
 import im2.session.Session;
 import io.netty.channel.Channel;
+import io.netty.channel.group.ChannelGroup;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -15,6 +16,8 @@ import java.util.concurrent.ConcurrentHashMap;
 public final class SessionUtil {
 
     private static final Map<String, Channel> userId2Channel = new ConcurrentHashMap<>();
+    private static final Map<String, ChannelGroup> groupId2ChannelGroup = new ConcurrentHashMap<>();
+
 
     private SessionUtil(){}
 
@@ -40,5 +43,13 @@ public final class SessionUtil {
 
     public static Channel getChannel(String userId) {
         return userId2Channel.get(userId);
+    }
+
+    public static void bindChannelGroup(String groupId, ChannelGroup channelGroup) {
+        groupId2ChannelGroup.put(groupId, channelGroup);
+    }
+
+    public static ChannelGroup getChnnelGroup(String groupId) {
+        return groupId2ChannelGroup.get(groupId);
     }
 }

@@ -21,7 +21,6 @@ import java.util.List;
  */
 public class CreateGroupRequestHandler extends SimpleChannelInboundHandler<CreateGroupRequestPacket> {
 
-    private static final ChannelGroup GROUP = new DefaultChannelGroup(GlobalEventExecutor.INSTANCE);
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, CreateGroupRequestPacket packet) throws Exception {
@@ -29,24 +28,30 @@ public class CreateGroupRequestHandler extends SimpleChannelInboundHandler<Creat
         List<String> userIdList = packet.getUserIdList();
         List<String> userNameList = Lists.newArrayListWithCapacity(userIdList.size());
 
+        ChannelGroup channelGroup = new DefaultChannelGroup(GlobalEventExecutor.INSTANCE);
+        
         userIdList.forEach(userId -> {
             Channel channel = SessionUtil.getChannel(userId);
             if (null != channel) {
-                GROUP.add(channel);
+                channelGroup.add(channel);
                 userNameList.add(SessionUtil.getSession(channel).getUserName());
             }
         });
 
+
+        String groupId = RandomUtil.random();
         CreateGroupResponsePacket responsePacket = new CreateGroupResponsePacket();
         responsePacket.setSuccess(true);
-        responsePacket.setGroupId(RandomUtil.random());
+        responsePacket.setGroupId(groupId);
         responsePacket.setUserNameList(userNameList);
 
-        GROUP.forEach(channel -> {
+        channelGroup.forEach(channel -> {
             channel.writeAndFlush(responsePacket);
         });
 
         System.out.print("群创建成功，id 为[" + responsePacket.getGroupId() + "], ");
         System.out.println("群里面有：" + responsePacket.getUserNameList());
+
+        SessionUtil.bindChannelGroup(groupId, channelGroup);
     }
 }

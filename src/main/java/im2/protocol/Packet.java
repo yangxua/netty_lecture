@@ -1,5 +1,6 @@
 package im2.protocol;
 
+import im2.serializer.SerializerAlgorithm;
 import lombok.Data;
 
 /**
@@ -23,5 +24,7 @@ public abstract class Packet {
     /**
      * 获取序列化方法
      */
-    protected abstract byte getSerializer();
+    protected byte getSerializer() {
+        return SerializerAlgorithm.JSON;
+    }
 }

@@ -1,9 +1,7 @@
 package im2.client.console.mgr;
 
 import im2.client.console.ConsoleCommand;
-import im2.client.console.impl.CreateGroupConsoleCommand;
-import im2.client.console.impl.LogoutConsoleCommand;
-import im2.client.console.impl.SendToUserConsoleCommand;
+import im2.client.console.impl.*;
 import im2.util.SessionUtil;
 import io.netty.channel.Channel;
 
@@ -25,6 +23,9 @@ public class ConsoleCommandMgr {
         consoleCommandMap.put("logout", new LogoutConsoleCommand());
         consoleCommandMap.put("sendToUser", new SendToUserConsoleCommand());
         consoleCommandMap.put("createGroup", new CreateGroupConsoleCommand());
+        consoleCommandMap.put("joinGroup", new JoinGroupConsoleCommand());
+        consoleCommandMap.put("quitGroup", new QuitGroupConsoleCommand());
+        consoleCommandMap.put("listGroupMembers", new ListGroupMembersConsoleCommand());
     }
 
     public void handle(Scanner scanner, Channel channel) {

@@ -1,14 +1,8 @@
 package im2.protocol;
 
 import im2.protocol.command.Command;
-import im2.protocol.request.CreateGroupRequestPacket;
-import im2.protocol.request.LoginRequestPacket;
-import im2.protocol.request.LogoutRequestPacket;
-import im2.protocol.request.MessageRequestPacket;
-import im2.protocol.response.CreateGroupResponsePacket;
-import im2.protocol.response.LoginResponsePacket;
-import im2.protocol.response.LogoutResponsePacket;
-import im2.protocol.response.MessageResponsePacket;
+import im2.protocol.request.*;
+import im2.protocol.response.*;
 import im2.serializer.Serializer;
 import im2.serializer.SerializerAlgorithm;
 import im2.serializer.impl.JAVASerializer;
@@ -42,6 +36,12 @@ public final class PacketCodec {
         command2Packet.put(Command.CREATE_GROUP_RESPONSE, CreateGroupResponsePacket.class);
         command2Packet.put(Command.LOGOUT_REQUEST, LogoutRequestPacket.class);
         command2Packet.put(Command.LOGOUT_RESPONSE, LogoutResponsePacket.class);
+        command2Packet.put(Command.JOIN_GROUP_REQUEST, JoinGroupRequestPacket.class);
+        command2Packet.put(Command.JOIN_GROUP_RESPONSE, JoinGroupResponsePacket.class);
+        command2Packet.put(Command.QUIT_GROUP_REQUEST, QuitGroupRequestPacket.class);
+        command2Packet.put(Command.QUIT_GROUP_RESPONSE, QuitGroupResponsePacket.class);
+        command2Packet.put(Command.LIST_GROUP_MEMBERS_REQUEST, ListGroupMembersRequestPacket.class);
+        command2Packet.put(Command.LIST_GROUP_MEMBERS_RESPONSE, ListGroupMembersResponsePacket.class);
 
 
         serializeAlgorithm2Serialize = new HashMap<>();
