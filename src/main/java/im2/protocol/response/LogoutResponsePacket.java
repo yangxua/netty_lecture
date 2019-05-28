@@ -1,4 +1,4 @@
-package im2.protocol.request;
+package im2.protocol.response;
 
 import im2.protocol.Packet;
 import im2.protocol.command.Command;
@@ -6,32 +6,25 @@ import im2.serializer.SerializerAlgorithm;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
 /**
  * @Auther: allanyang
- * @Date: 2019/5/19 10:27
+ * @Date: 2019/5/28 09:55
  * @Description:
  */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
-public class MessageRequestPacket extends Packet {
+public class LogoutResponsePacket extends Packet {
 
     /**
-     * 用户id
+     * 是否成功
      */
-    private String userId;
-
-    /**
-     * 消息内容
-     */
-    private String message;
+    private boolean isSuccess;
 
     @Override
     protected byte getCommand() {
-        return Command.MESSAGE_REQUEST;
+        return Command.LOGOUT_RESPONSE;
     }
 
     @Override

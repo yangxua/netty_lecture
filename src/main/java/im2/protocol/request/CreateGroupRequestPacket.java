@@ -8,30 +8,27 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.util.List;
+
 /**
  * @Auther: allanyang
- * @Date: 2019/5/19 10:27
+ * @Date: 2019/5/27 21:37
  * @Description:
  */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class MessageRequestPacket extends Packet {
+public class CreateGroupRequestPacket extends Packet {
 
     /**
-     * 用户id
+     * 加入组的用户列表
      */
-    private String userId;
-
-    /**
-     * 消息内容
-     */
-    private String message;
+    private List<String> userIdList;
 
     @Override
     protected byte getCommand() {
-        return Command.MESSAGE_REQUEST;
+        return Command.CREATE_GROUP_REQUEST;
     }
 
     @Override
