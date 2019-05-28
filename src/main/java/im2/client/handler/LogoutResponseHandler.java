@@ -13,6 +13,7 @@ public class LogoutResponseHandler extends SimpleChannelInboundHandler<LogoutRes
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, LogoutResponseHandler msg) throws Exception {
+        System.out.println("服务端已解绑，channel: " + ctx.channel());
         SessionUtil.unBindSession(ctx.channel());
     }
 }

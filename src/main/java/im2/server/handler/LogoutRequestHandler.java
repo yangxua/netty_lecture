@@ -17,6 +17,7 @@ public class LogoutRequestHandler extends SimpleChannelInboundHandler<LogoutRequ
     protected void channelRead0(ChannelHandlerContext ctx, LogoutRequestPacket packet) throws Exception {
         SessionUtil.unBindSession(ctx.channel());
 
+        System.out.println("服务端已解绑，channel: " + ctx.channel());
         ctx.channel().writeAndFlush(new LogoutResponsePacket(true));
     }
 }

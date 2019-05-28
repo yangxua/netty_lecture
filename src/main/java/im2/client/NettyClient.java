@@ -1,7 +1,7 @@
 package im2.client;
 
+import im2.client.console.mgr.ConsoleCommandMgr;
 import im2.protocol.request.LoginRequestPacket;
-import im2.protocol.request.MessageRequestPacket;
 import im2.thread.ApplicationThreadPoolExecutor;
 import im2.util.SessionUtil;
 import io.netty.bootstrap.Bootstrap;
@@ -83,14 +83,8 @@ public class NettyClient {
                     channel.writeAndFlush(requestPacket);
                     sleep();
                 } else {
-                    String toUserId = scanner.next();
-                    String content = scanner.next();
-
-                    MessageRequestPacket requestPacket = new MessageRequestPacket();
-                    requestPacket.setUserId(toUserId);
-                    requestPacket.setMessage(content);
-
-                    channel.writeAndFlush(requestPacket);
+                    ConsoleCommandMgr commandMgr = new ConsoleCommandMgr();
+                    commandMgr.handle(scanner, channel);
                 }
             }
         };

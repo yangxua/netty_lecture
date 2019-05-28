@@ -42,7 +42,9 @@ public class CreateGroupRequestHandler extends SimpleChannelInboundHandler<Creat
         responsePacket.setGroupId(RandomUtil.random());
         responsePacket.setUserNameList(userNameList);
 
-        ctx.writeAndFlush(responsePacket);
+        GROUP.forEach(channel -> {
+            channel.writeAndFlush(responsePacket);
+        });
 
         System.out.print("群创建成功，id 为[" + responsePacket.getGroupId() + "], ");
         System.out.println("群里面有：" + responsePacket.getUserNameList());

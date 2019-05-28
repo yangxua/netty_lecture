@@ -36,10 +36,11 @@ public class ConsoleCommandMgr {
 
         ConsoleCommand consoleCommand = consoleCommandMap.get(command);
 
-        if (command != null) {
+        if (consoleCommand != null) {
             consoleCommand.exec(scanner, channel);
         } else {
             System.err.println("无法识别[" + command + "]指令，请重新输入!");
+            handle(scanner, channel);
         }
     }
 }
