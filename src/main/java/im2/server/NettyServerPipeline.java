@@ -2,10 +2,7 @@ package im2.server;
 
 import im2.codec.PacketDecoder;
 import im2.codec.PacketEncoder;
-import im2.server.handler.AuthHandler;
-import im2.server.handler.CreateGroupRequestHandler;
-import im2.server.handler.LoginRequestHandler;
-import im2.server.handler.MessageRequestHandler;
+import im2.server.handler.*;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.socket.nio.NioSocketChannel;
@@ -26,6 +23,9 @@ public class NettyServerPipeline extends ChannelInitializer<NioSocketChannel> {
         pipeline.addLast(new AuthHandler());
         pipeline.addLast(new MessageRequestHandler());
         pipeline.addLast(new CreateGroupRequestHandler());
+        pipeline.addLast(new ListGroupMembersRequestHandler());
+        pipeline.addLast(new JoinGroupRequestHandler());
+        pipeline.addLast(new QuitGroupRequestHandler());
         pipeline.addLast(new PacketEncoder());
     }
 }

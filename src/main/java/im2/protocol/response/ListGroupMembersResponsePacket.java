@@ -2,6 +2,7 @@ package im2.protocol.response;
 
 import im2.protocol.Packet;
 import im2.protocol.command.Command;
+import im2.serializer.SerializerAlgorithm;
 import im2.session.Session;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -34,5 +35,10 @@ public class ListGroupMembersResponsePacket extends Packet {
     @Override
     protected byte getCommand() {
         return Command.LIST_GROUP_MEMBERS_RESPONSE;
+    }
+
+    @Override
+    protected byte getSerializer() {
+        return SerializerAlgorithm.JSON;
     }
 }
