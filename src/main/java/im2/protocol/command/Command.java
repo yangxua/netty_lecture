@@ -76,4 +76,16 @@ public interface Command {
      * 列出成员响应
      */
     byte LIST_GROUP_MEMBERS_RESPONSE = 14;
+
+    /**
+     * 发送给某个组消息请求
+     */
+    byte SEND_TO_USER_GROUP_REQUEST = 15;
+
+    /**
+     * 发送给某个组消息响应
+     */
+    byte SEND_TO_USER_GROUP_RESPONSE = 16;
+
+
 }

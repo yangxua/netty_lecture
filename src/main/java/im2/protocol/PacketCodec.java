@@ -42,6 +42,8 @@ public final class PacketCodec {
         command2Packet.put(Command.QUIT_GROUP_RESPONSE, QuitGroupResponsePacket.class);
         command2Packet.put(Command.LIST_GROUP_MEMBERS_REQUEST, ListGroupMembersRequestPacket.class);
         command2Packet.put(Command.LIST_GROUP_MEMBERS_RESPONSE, ListGroupMembersResponsePacket.class);
+        command2Packet.put(Command.SEND_TO_USER_GROUP_REQUEST, SendToGroupRequestPacket.class);
+        command2Packet.put(Command.SEND_TO_USER_GROUP_RESPONSE, SendToGroupResponsePacket.class);
 
 
         serializeAlgorithm2Serialize = new HashMap<>();
