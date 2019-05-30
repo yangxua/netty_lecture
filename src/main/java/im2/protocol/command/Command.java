@@ -8,6 +8,11 @@ package im2.protocol.command;
 public interface Command {
 
     /**
+     * 心跳包
+     */
+    byte HEART_HBAT = 0;
+
+    /**
      * 登陆请求
      */
     byte LOGIN_REQUEST = 1;
@@ -87,5 +92,13 @@ public interface Command {
      */
     byte SEND_TO_USER_GROUP_RESPONSE = 16;
 
+    /**
+     * 心跳包请求
+     */
+    byte HEART_BEAT_REQUEST = 17;
 
+    /**
+     * 心跳包响应
+     */
+    byte HEART_BEAT_RESPONSE = 18;
 }

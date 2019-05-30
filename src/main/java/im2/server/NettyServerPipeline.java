@@ -18,6 +18,7 @@ public class NettyServerPipeline extends ChannelInitializer<NioSocketChannel> {
     protected void initChannel(NioSocketChannel ch) throws Exception {
         ChannelPipeline pipeline = ch.pipeline();
 
+        pipeline.addLast(new IMIdleStateHandler());
         pipeline.addLast(new Spliter());
         pipeline.addLast(PacketCodecHandler.INSTANCE);
         pipeline.addLast(LoginRequestHandler.INSTANCE);
