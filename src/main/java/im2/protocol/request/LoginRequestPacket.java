@@ -2,7 +2,6 @@ package im2.protocol.request;
 
 import im2.protocol.Packet;
 import im2.protocol.command.Command;
-import im2.serializer.SerializerAlgorithm;
 import lombok.Data;
 
 /**
@@ -23,12 +22,8 @@ public class LoginRequestPacket extends Packet {
     private String password;
 
     @Override
-    protected byte getCommand() {
+    public byte getCommand() {
         return Command.LOGIN_REQUEST;
     }
 
-    @Override
-    protected byte getSerializer() {
-        return SerializerAlgorithm.JSON;
-    }
 }

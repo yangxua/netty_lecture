@@ -3,6 +3,7 @@ package im2.server.handler;
 import im2.protocol.request.QuitGroupRequestPacket;
 import im2.protocol.response.QuitGroupResponsePacket;
 import im2.util.SessionUtil;
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.channel.group.ChannelGroup;
@@ -12,7 +13,12 @@ import io.netty.channel.group.ChannelGroup;
  * @Date: 2019/5/28 21:33
  * @Description:
  */
+@ChannelHandler.Sharable
 public class QuitGroupRequestHandler extends SimpleChannelInboundHandler<QuitGroupRequestPacket> {
+
+    public static final QuitGroupRequestHandler INSTANCE = new QuitGroupRequestHandler();
+
+    private QuitGroupRequestHandler(){}
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, QuitGroupRequestPacket packet) throws Exception {

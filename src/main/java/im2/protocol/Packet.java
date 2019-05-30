@@ -19,7 +19,7 @@ public abstract class Packet {
     /**
      * 获取指令
      */
-    protected abstract byte getCommand();
+    public abstract byte getCommand();
 
     /**
      * 获取序列化方法

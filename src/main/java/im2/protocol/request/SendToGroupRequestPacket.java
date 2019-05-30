@@ -29,7 +29,7 @@ public class SendToGroupRequestPacket extends Packet {
     private String msg;
 
     @Override
-    protected byte getCommand() {
+    public byte getCommand() {
         return Command.SEND_TO_USER_GROUP_REQUEST;
     }
 }

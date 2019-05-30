@@ -24,7 +24,7 @@ public class QuitGroupRequestPacket extends Packet {
     private String groupId;
 
     @Override
-    protected byte getCommand() {
+    public byte getCommand() {
         return Command.QUIT_GROUP_REQUEST;
     }
 }

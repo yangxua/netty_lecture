@@ -5,6 +5,7 @@ import im2.protocol.response.MessageResponsePacket;
 import im2.session.Session;
 import im2.util.SessionUtil;
 import io.netty.channel.Channel;
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 
@@ -13,7 +14,12 @@ import io.netty.channel.SimpleChannelInboundHandler;
  * @Date: 2019/5/19 12:41
  * @Description:
  */
+@ChannelHandler.Sharable
 public class MessageRequestHandler extends SimpleChannelInboundHandler<MessageRequestPacket> {
+
+    public static final MessageRequestHandler INSTANCE = new MessageRequestHandler();
+
+    private MessageRequestHandler() {}
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, MessageRequestPacket packet) throws Exception {

@@ -3,6 +3,7 @@ package im2.server.handler;
 import im2.protocol.request.SendToGroupRequestPacket;
 import im2.protocol.response.SendToGroupResponsePacket;
 import im2.util.SessionUtil;
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.channel.group.ChannelGroup;
@@ -12,7 +13,12 @@ import io.netty.channel.group.ChannelGroup;
  * @Date: 2019/5/29 21:09
  * @Description:
  */
+@ChannelHandler.Sharable
 public class SendToGroupRequestHandler extends SimpleChannelInboundHandler<SendToGroupRequestPacket> {
+
+    public static final SendToGroupRequestHandler INSTANCE = new SendToGroupRequestHandler();
+
+    private SendToGroupRequestHandler(){}
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, SendToGroupRequestPacket packet) throws Exception {

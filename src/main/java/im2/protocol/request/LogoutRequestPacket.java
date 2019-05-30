@@ -2,7 +2,6 @@ package im2.protocol.request;
 
 import im2.protocol.Packet;
 import im2.protocol.command.Command;
-import im2.serializer.SerializerAlgorithm;
 
 /**
  * @Auther: allanyang
@@ -12,12 +11,8 @@ import im2.serializer.SerializerAlgorithm;
 public class LogoutRequestPacket extends Packet {
 
     @Override
-    protected byte getCommand() {
+    public byte getCommand() {
         return Command.LOGOUT_REQUEST;
     }
 
-    @Override
-    protected byte getSerializer() {
-        return SerializerAlgorithm.JSON;
-    }
 }

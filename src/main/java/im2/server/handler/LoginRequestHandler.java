@@ -5,6 +5,7 @@ import im2.protocol.response.LoginResponsePacket;
 import im2.session.Session;
 import im2.util.RandomUtil;
 import im2.util.SessionUtil;
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 
@@ -13,7 +14,12 @@ import io.netty.channel.SimpleChannelInboundHandler;
  * @Date: 2019/5/19 12:40
  * @Description:
  */
+@ChannelHandler.Sharable
 public class LoginRequestHandler extends SimpleChannelInboundHandler<LoginRequestPacket> {
+
+    public static final LoginRequestHandler INSTANCE = new LoginRequestHandler();
+
+    private LoginRequestHandler(){}
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, LoginRequestPacket packet) throws Exception {

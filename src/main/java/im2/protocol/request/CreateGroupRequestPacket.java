@@ -2,7 +2,6 @@ package im2.protocol.request;
 
 import im2.protocol.Packet;
 import im2.protocol.command.Command;
-import im2.serializer.SerializerAlgorithm;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -27,12 +26,8 @@ public class CreateGroupRequestPacket extends Packet {
     private List<String> userIdList;
 
     @Override
-    protected byte getCommand() {
+    public byte getCommand() {
         return Command.CREATE_GROUP_REQUEST;
     }
 
-    @Override
-    protected byte getSerializer() {
-        return SerializerAlgorithm.JSON;
-    }
 }

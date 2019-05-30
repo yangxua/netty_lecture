@@ -5,6 +5,7 @@ import im2.protocol.request.ListGroupMembersRequestPacket;
 import im2.protocol.response.ListGroupMembersResponsePacket;
 import im2.session.Session;
 import im2.util.SessionUtil;
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.channel.group.ChannelGroup;
@@ -16,7 +17,12 @@ import java.util.List;
  * @Date: 2019/5/28 21:45
  * @Description:
  */
+@ChannelHandler.Sharable
 public class ListGroupMembersRequestHandler extends SimpleChannelInboundHandler<ListGroupMembersRequestPacket> {
+
+    public static final ListGroupMembersRequestHandler INSTANCE = new ListGroupMembersRequestHandler();
+
+    private ListGroupMembersRequestHandler(){}
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, ListGroupMembersRequestPacket packet) throws Exception {
