@@ -1,18 +1,24 @@
-package im2.thread;
+package xdubbo.core.thread;
 
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @Auther: allanyang
- * @Date: 2019/5/19 11:26
+ * @Date: 2019/9/5 18:04
  * @Description:
  */
 public class ApplicationThreadFactory implements ThreadFactory {
 
-    private final AtomicInteger count = new AtomicInteger(1);
-
+    /**
+     * 工厂标志
+     */
     private String flag;
+
+    /**
+     * 该工厂产生线程个数
+     */
+    private final AtomicInteger count = new AtomicInteger(0);
 
     public ApplicationThreadFactory(String flag) {
         this.flag = flag;
@@ -20,6 +26,6 @@ public class ApplicationThreadFactory implements ThreadFactory {
 
     @Override
     public Thread newThread(Runnable r) {
-        return new Thread(r, "pool-" + flag + "-a-" + count.getAndIncrement());
+        return new Thread(r, "pool-" + flag + "-" + count.getAndIncrement());
     }
 }

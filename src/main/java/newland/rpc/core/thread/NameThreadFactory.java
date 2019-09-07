@@ -25,7 +25,7 @@ public class NameThreadFactory implements ThreadFactory {
     }
 
     public NameThreadFactory(String prefix,boolean deamo) {
-        this.prefix = prefix + "-thread-";
+        this.prefix = prefix + "-a-";
         this.daemoThread = deamo;
         SecurityManager s = System.getSecurityManager();
         threadGroup = (s == null) ? Thread.currentThread().getThreadGroup() : s.getThreadGroup();

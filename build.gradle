@@ -37,6 +37,10 @@ dependencies {
     compile group: 'org.projectlombok', name: 'lombok-maven', version: '1.16.20.0', ext: 'pom'
 // https://mvnrepository.com/artifact/org.projectlombok/lombok
     compile group: 'org.projectlombok', name: 'lombok', version: '1.16.4'
+// https://mvnrepository.com/artifact/org.jboss.marshalling/jboss-marshalling
+    compile group: 'org.jboss.marshalling', name: 'jboss-marshalling', version: '2.0.5.Final'
+// https://mvnrepository.com/artifact/com.alibaba/dubbo
+    compile group: 'com.alibaba', name: 'dubbo', version: '2.6.2'
 
 }
 
